@@ -1,7 +1,15 @@
 {
     "i18n-ally.localesPaths": "./public/locales",
-    "cSpell.words": [
-        "sdfsdfsd"
+    "i18n-ally.keystyle": "nested",
+    "css.validate": true,
+    "less.validate": false,
+    "scss.validate": true,
+    "stylelint.enable": true,
+    "stylelint.validate": [
+        "css",
+        "scss"
     ],
-    "i18n-ally.keystyle": "nested"
+    "cSpell.words": [
+        "Загрузка"
+    ],
 }
