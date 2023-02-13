@@ -2,17 +2,21 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended'],
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:i18next/recommended',
+  ],
   overrides: [],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['tsconfig.json', '@typescript-eslint', 'i18next']
+    project: ['tsconfig.json', '@typescript-eslint', 'i18next'],
   },
   plugins: ['react'],
   rules: {
@@ -21,7 +25,10 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     'import/no-duplicates': ['error', { 'prefer-inline': true }],
-    'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.js', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.jsx', '.js', '.tsx'] },
+    ],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'off',
@@ -30,12 +37,23 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'warn',
     'react/function-component-definition': 'off',
-    'no-shadow': 'off', 
-    "@typescript-eslint/no-floating-promises": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, onlyAttribute: [''] },
+    ],
+    semi: 'off',
+    '@typescript-eslint/semi': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    // 'i18next/no-literal-string': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
+    indent: ['error', 2],
+    'no-tabs': ['error', { allowIndentationTabs: true }],
   },
   globals: {
-    '__IS_DEV__': true
-  }
-}
+    __IS_DEV__: true,
+  },
+};
