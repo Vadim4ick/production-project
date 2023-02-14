@@ -1,28 +1,13 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+import path from 'path';
 
 export default {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "/private/var/folders/xn/d36d4r8x6z3d4wn24q1bsbr40000gn/T/jest_dx",
-
-  // Automatically clear mock calls, instances, contexts and results before every test
   rootDir: '../../',
   clearMocks: true,
   testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    '/node_modules/'
-  ],
-  moduleDirectories: [
-    'node_modules'
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  moduleDirectories: ['node_modules'],
+  modulePaths: ['<rootDir>src'],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleFileExtensions: [
     'js',
     'mjs',
@@ -31,11 +16,13 @@ export default {
     'ts',
     'tsx',
     'json',
-    'node'
+    'node',
   ],
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-  ]
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+  moduleNameMapper: {
+    '\\.(s?css)$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // '**/__tests__/**/*.[jt]s?(x)',
   //   '**/?(*.)+(spec|test).[tj]s?(x)'
@@ -197,4 +184,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-}
+};

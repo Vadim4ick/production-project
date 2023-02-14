@@ -6,25 +6,23 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript',
+    'plugin:@typescript-eslint/recommended',
     'plugin:i18next/recommended',
   ],
-  overrides: [],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['tsconfig.json', '@typescript-eslint', 'i18next'],
   },
-  plugins: ['react'],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
-    '@typescript-eslint/naming-convention': 'warn',
+    '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
-    'import/no-duplicates': ['error', { 'prefer-inline': true }],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.jsx', '.js', '.tsx'] },
@@ -56,4 +54,46 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };
+
+// env: {
+//   browser: true,
+//   es2021: true,
+//   jest: true,
+// },
+// extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
+// parser: "@typescript-eslint/parser",
+// parserOptions: {
+//   ecmaFeatures: {
+//     jsx: true,
+//   },
+//   ecmaVersion: "latest",
+//   sourceType: "module",
+// },
+// plugins: ["react", "@typescript-eslint", "i18next"],
+
+// env: {
+//   browser: true,
+//   es2021: true,
+//   jest: true,
+// },
+// extends: [
+//   'plugin:react/recommended',
+//   'standard-with-typescript',
+//   'plugin:i18next/recommended',
+// ],
+// overrides: [],
+// parserOptions: {
+//   ecmaFeatures: {
+//     jsx: true,
+//   },
+// ecmaVersion: 'latest',
+// sourceType: 'module',
+// project: ['tsconfig.json', '@typescript-eslint', 'i18next'],
+// },
+// plugins: ['react', '@typescript-eslint'],
