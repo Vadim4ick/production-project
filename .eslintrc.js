@@ -33,19 +33,18 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, onlyAttribute: [''] },
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
     ],
     semi: 'off',
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/member-delimiter-style': 'off',
-    // 'i18next/no-literal-string': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/comma-dangle': 'off',
     indent: ['error', 2],
@@ -59,6 +58,14 @@ module.exports = {
       version: 'detect',
     },
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
 
 // env: {

@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'features/LangSwitcher/LangSwitcher';
+import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
