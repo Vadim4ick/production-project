@@ -49,6 +49,7 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     indent: ['error', 2],
     'no-tabs': ['error', { allowIndentationTabs: true }],
+    'linebreak-style': 0,
   },
   globals: {
     __IS_DEV__: true,
