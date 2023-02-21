@@ -29,6 +29,7 @@ export const Navbar = ({ className }: NavbarProps) => {
       </Button>
       <Modal isOpen={isAuthModal} onClose={onToggleModal}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quos!
+        223
       </Modal>
     </div>
   );
