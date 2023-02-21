@@ -47,7 +47,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
           theme={AppLinkTheme.SECONDARY}
           to={RoutePath.main}
         >
-          <HomeIcon class={cls.icon} />
+          <HomeIcon className={cls.icon} />
           <span className={cls.link}>{t('Главная')}</span>
         </AppLink>
 
@@ -56,7 +56,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
           theme={AppLinkTheme.SECONDARY}
           to={RoutePath.about}
         >
-          <AboutIcon class={cls.icon} />
+          <AboutIcon className={cls.icon} />
           <span className={cls.link}>{t('О сайте')}</span>
         </AppLink>
       </div>

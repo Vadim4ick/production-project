@@ -17,7 +17,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
@@ -49,6 +49,8 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     indent: ['error', 2],
     'no-tabs': ['error', { allowIndentationTabs: true }],
+    'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
+    'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
   },
   globals: {
     __IS_DEV__: true,
@@ -60,47 +62,10 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
       },
     },
   ],
 };
-
-// env: {
-//   browser: true,
-//   es2021: true,
-//   jest: true,
-// },
-// extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
-// parser: "@typescript-eslint/parser",
-// parserOptions: {
-//   ecmaFeatures: {
-//     jsx: true,
-//   },
-//   ecmaVersion: "latest",
-//   sourceType: "module",
-// },
-// plugins: ["react", "@typescript-eslint", "i18next"],
-
-// env: {
-//   browser: true,
-//   es2021: true,
-//   jest: true,
-// },
-// extends: [
-//   'plugin:react/recommended',
-//   'standard-with-typescript',
-//   'plugin:i18next/recommended',
-// ],
-// overrides: [],
-// parserOptions: {
-//   ecmaFeatures: {
-//     jsx: true,
-//   },
-// ecmaVersion: 'latest',
-// sourceType: 'module',
-// project: ['tsconfig.json', '@typescript-eslint', 'i18next'],
-// },
-// plugins: ['react', '@typescript-eslint'],
