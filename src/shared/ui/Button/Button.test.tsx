@@ -10,6 +10,6 @@ describe('Button', () => {
   test('Test clear theme', () => {
     render(<Button theme={ThemeButton.CLEAR}>Test</Button>);
     expect(screen.getByText('Test')).toHaveClass('clear');
-    screen.debug();
+    // screen.debug();
   });
 });

@@ -6,15 +6,18 @@ import 'app/styles/index.scss';
 
 import 'shared/config/i18n/i18n';
 import { ErrorBounderay } from 'app/providers/ErrorBounderay';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 render(
-  <BrowserRouter>
-    <ErrorBounderay>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBounderay>
-  </BrowserRouter>,
+  <StoreProvider>
+    <BrowserRouter>
+      <ErrorBounderay>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBounderay>
+    </BrowserRouter>
+  </StoreProvider>,
 
   document.getElementById('root'),
 );
