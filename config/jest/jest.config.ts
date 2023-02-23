@@ -1,30 +1,38 @@
 import path from 'path';
+import { getPathMocks } from './mocks/path';
 
-export default {
-  globals: { __IS_DEV__: true },
-  rootDir: '../../',
-  clearMocks: true,
-  testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: ['/node_modules/'],
-  moduleDirectories: ['node_modules', '<rootDir>src'],
-  modulePaths: ['<rootDir>src'],
+export default async () => {
+  const pathMocks = await getPathMocks();
 
-  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
-  moduleFileExtensions: [
-    'js',
-    'mjs',
-    'cjs',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node',
-  ],
-  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-  moduleNameMapper: {
-    '\\.(s?css)$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-  },
+  const config = {
+    globals: { __IS_DEV__: true },
+    rootDir: '../../',
+    clearMocks: true,
+    testEnvironment: 'jsdom',
+    coveragePathIgnorePatterns: ['/node_modules/'],
+    moduleDirectories: ['node_modules', '<rootDir>src'],
+    modulePaths: ['<rootDir>src'],
+
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    moduleFileExtensions: [
+      'js',
+      'mjs',
+      'cjs',
+      'jsx',
+      'ts',
+      'tsx',
+      'json',
+      'node',
+    ],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+    moduleNameMapper: {
+      '\\.(s?css)$': 'identity-obj-proxy',
+      '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+      ...pathMocks,
+    },
+  };
+
+  return config;
 
   // '**/__tests__/**/*.[jt]s?(x)',
   //   '**/?(*.)+(spec|test).[tj]s?(x)'

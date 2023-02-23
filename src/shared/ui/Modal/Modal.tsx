@@ -1,4 +1,4 @@
-import { Theme, useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
   ReactNode,
   useCallback,
@@ -15,16 +15,23 @@ interface ModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<ModalProps> = (props) => {
-  const { className, children, isOpen = false, onClose } = props;
+  const { className, children, isOpen = false, onClose, lazy } = props;
 
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -65,6 +72,10 @@ export const Modal: React.FC<ModalProps> = (props) => {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>
