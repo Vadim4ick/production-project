@@ -2,14 +2,14 @@ name: Linting, testing and building
 on:
   push:
     branches: [master]
-    paths-ignore:
-      - '.github/**'
-      - '.vscode/**'
+    # paths-ignore:
+    #   - '.github/**'
+    #   - '.vscode/**'
   pull_request:
     branches: [master]
-    paths-ignore:
-      - '.github/**'
-      - '.vscode/**'
+    # paths-ignore:
+    #   - '.github/**'
+    #   - '.vscode/**'
 jobs:
   init-host:
     name: 1. Load project & Linting
