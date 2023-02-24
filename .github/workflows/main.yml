@@ -1,14 +1,12 @@
 name: Linting, testing and building
 on:
   push:
-    branches:
-      - dev
+    branches: [master]
     paths-ignore:
       - '.github/**'
       - '.vscode/**'
   pull_request:
-    branches:
-      - dev
+    branches: [master]
     paths-ignore:
       - '.github/**'
       - '.vscode/**'
