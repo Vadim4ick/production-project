@@ -119,3 +119,12 @@ jobs:
           fail-on-cache-miss: true
       - name: build production project
         run: npm run build:prod
+      - name: Upload Artefact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-files
+          path: build
+      - name: Get build Artefact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
