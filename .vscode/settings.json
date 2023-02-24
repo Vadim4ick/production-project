@@ -1,16 +1,10 @@
 {
-    "i18n-ally.localesPaths": "public/locales",
-    "i18n-ally.keystyle": "nested",
-    "css.validate": true,
-    "less.validate": false,
-    "scss.validate": true,
-    "stylelint.enable": true,
-    "stylelint.validate": [
-        "css",
-        "scss"
-    ],
-    "cSpell.words": [
-        "Загрузка",
-        "найдена"
-    ], 
+  "i18n-ally.localesPaths": "public/locales",
+  "i18n-ally.keystyle": "nested",
+  "css.validate": true,
+  "less.validate": false,
+  "scss.validate": true,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss"],
+  "cSpell.words": ["Загрузка", "найдена"]
 }

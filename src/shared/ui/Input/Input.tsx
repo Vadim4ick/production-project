@@ -34,6 +34,7 @@ export const Input: React.FC<InputProps> = memo((props) => {
   } = props;
 
   const ref = useRef<HTMLInputElement>(null);
+
   const [isFocused, setIsFocused] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
 
@@ -79,6 +80,16 @@ export const Input: React.FC<InputProps> = memo((props) => {
           onSelect={onSelect}
           {...otherProps}
         />
+
+        {/* {type === 'password' && (
+          <Button
+            onClick={onPass}
+            theme={ThemeButton.CLEAR}
+            className={cls.icon}
+          >
+            <Eye />
+          </Button>
+        )} */}
 
         {isFocused && (
           <span
