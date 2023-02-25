@@ -81,16 +81,6 @@ export const Input: React.FC<InputProps> = memo((props) => {
           {...otherProps}
         />
 
-        {/* {type === 'password' && (
-          <Button
-            onClick={onPass}
-            theme={ThemeButton.CLEAR}
-            className={cls.icon}
-          >
-            <Eye />
-          </Button>
-        )} */}
-
         {isFocused && (
           <span
             style={{ left: `${caretPosition * 9}px` }}

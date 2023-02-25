@@ -9,6 +9,9 @@
   "Переключить": "toggle",
   "Короткий язык": "En",
   "Войти": "To come in",
+  "Выйти": "Go out",
   "Введите пароль": "Enter password",
-  "Введите имя": "Enter username"
+  "Введите имя": "Enter username",
+  "Форма авторизации": "Authorization Form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
 }

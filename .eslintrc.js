@@ -51,6 +51,7 @@ module.exports = {
     'no-tabs': ['error', { allowIndentationTabs: true }],
     'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
     'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
+    'react/display-name': 'off',
   },
   globals: {
     __IS_DEV__: true,

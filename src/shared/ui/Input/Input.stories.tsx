@@ -27,3 +27,12 @@ Dark.args = {
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkPassword = Template.bind({});
+DarkPassword.args = {
+  placeholder: 'Type password',
+  value: '123',
+  type: 'password',
+};
+
+DarkPassword.decorators = [ThemeDecorator(Theme.DARK)];
