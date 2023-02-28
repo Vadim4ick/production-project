@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-// import { Theme } from 'app/providers/ThemeProvider';
-// import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { Modal } from './Modal';
 
@@ -21,10 +21,10 @@ Primary.args = {
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quos! ',
 };
 
-// export const Dark = Template.bind({});
-// Dark.args = {
-//   isOpen: true,
-//   children:
-//     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quos! ',
-// };
-// Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const ModalDark = Template.bind({});
+ModalDark.args = {
+  isOpen: true,
+  children: 'Lorem ipsum dol',
+};
+
+ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
