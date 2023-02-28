@@ -13,7 +13,7 @@ on:
 jobs:
   init-host:
     name: 1. Load project & Linting
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
@@ -43,7 +43,7 @@ jobs:
   unit-test:
     name: 2.2 Unit testing
     needs: init-host
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
@@ -65,10 +65,14 @@ jobs:
   screens:
     name: 2.3 Screenshots testing project
     needs: init-host
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
       - name: Starting Node.js
         uses: actions/setup-node@v3
         with:
@@ -100,7 +104,7 @@ jobs:
     needs:
       - unit-test
       - screens
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
