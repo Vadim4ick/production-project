@@ -24,7 +24,7 @@ Primary.args = {
 export const ModalDark = Template.bind({});
 ModalDark.args = {
   isOpen: true,
-  children: 'Lorem ipsum dol',
+  children: 'Lorem ipsum doasdasdal',
 };
 
 ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
