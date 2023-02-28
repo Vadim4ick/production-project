@@ -18,13 +18,13 @@ export const Primary = Template.bind({});
 Primary.args = {
   isOpen: true,
   children:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quos! ',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quoasdasds! ',
 };
 
-export const ModalDark = Template.bind({});
-ModalDark.args = {
-  isOpen: true,
-  children: 'Lorem ipsum doasdasdal',
-};
+// export const ModalDark = Template.bind({});
+// ModalDark.args = {
+//   isOpen: true,
+//   children: 'Lorem ipsum doasdasdal',
+// };
 
-ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
+// ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
