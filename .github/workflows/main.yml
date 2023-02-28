@@ -11,35 +11,6 @@ on:
     #   - '.github/**'
     #   - '.vscode/**'
 jobs:
-  init-host:
-    name: 1. Load project & Linting
-    runs-on: windows-2019
-    steps:
-      - name: Get repository code
-        uses: actions/checkout@v3
-      - name: Starting Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 17.4.0
-      - name: Cache Start
-        id: cache-npm
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install node modules
-        run: npm ci
-
-      - name: Linting typescript
-        if: always()
-        run: npm run lint:ts
-      - name: CSS linter
-        if: always()
-        run: npm run lint:scss
-
   unit-test:
     name: 2.2 Unit testing
     needs: init-host
