@@ -11,11 +11,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  parameters: {
-    loki: {
-      skip: true,
-    },
-  },
+  // parameters: {
+  //   loki: {
+  //     skip: true,
+  //   },
+  // },
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
@@ -25,7 +25,6 @@ ModalDark.args = {
   isOpen: true,
   children: 'Lorem ipsum doasdasdal',
 };
-
 ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Primary = Template.bind({});

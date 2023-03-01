@@ -53,8 +53,10 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
     [dispatch],
   );
 
-  const onLoginClick = useCallback(() => {
+  const onLoginClick = useCallback(async () => {
     dispatch(loginByUsername({ username, password }));
+    // const result = await dispatch(loginByUsername({ username, password }));
+    // console.log(result);
   }, [dispatch, password, username]);
 
   const onPass = useCallback(() => {
