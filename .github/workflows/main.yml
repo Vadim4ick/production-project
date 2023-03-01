@@ -93,8 +93,8 @@ jobs:
         if: ${{ failure() && steps.screenshots.conclusion == 'failure'}}
         uses: actions/upload-artifact@v3
         with:
-          path: '.loki'
-          name: report.html
+          path: '.loki/difference'
+          name: loki-fail-difference
   build:
     name: 3. Build production
     needs:
