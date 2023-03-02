@@ -18,9 +18,11 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -28,9 +30,9 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm: React.FC<LoginFormProps> = memo((props) => {
-  const { className } = props;
+  const { className, onSuccess } = props;
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
@@ -54,10 +56,11 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
   );
 
   const onLoginClick = useCallback(async () => {
-    dispatch(loginByUsername({ username, password }));
-    // const result = await dispatch(loginByUsername({ username, password }));
-    // console.log(result);
-  }, [dispatch, password, username]);
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [onSuccess, dispatch, password, username]);
 
   const onPass = useCallback(() => {
     isPass((prev) => !prev);
