@@ -9,15 +9,15 @@ import { ErrorBounderay } from 'app/providers/ErrorBounderay';
 import { StoreProvider } from 'app/providers/StoreProvider';
 
 render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBounderay>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBounderay>
-    </BrowserRouter>
-  </StoreProvider>,
+    </StoreProvider>
+  </BrowserRouter>,
 
   document.getElementById('root'),
 );

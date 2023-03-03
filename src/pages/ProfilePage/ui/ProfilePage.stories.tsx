@@ -10,6 +10,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;

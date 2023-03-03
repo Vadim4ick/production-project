@@ -5,7 +5,7 @@ export default async () => {
   const pathMocks = await getPathMocks();
 
   const config = {
-    globals: { __IS_DEV__: true },
+    globals: { __IS_DEV__: true, __API__: '' },
     rootDir: '../../',
     clearMocks: true,
     testEnvironment: 'jsdom',
