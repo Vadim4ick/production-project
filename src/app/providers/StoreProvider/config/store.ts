@@ -1,15 +1,17 @@
 import {
   CombinedState,
-  configureStore,
   Reducer,
   ReducersMapObject,
+  configureStore,
 } from '@reduxjs/toolkit';
+import { NavigateOptions, To } from 'react-router-dom';
+
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
-import { NavigateOptions, To } from 'react-router-dom';
 import { $api } from 'shared/api/api';
-import { createReducerManager } from './reducerManager';
+
 import { StateSchema } from './StateSchema';
+import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
   initialState?: StateSchema,

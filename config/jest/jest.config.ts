@@ -1,11 +1,12 @@
 import path from 'path';
+
 import { getPathMocks } from './mocks/path';
 
 export default async () => {
   const pathMocks = await getPathMocks();
 
   const config = {
-    globals: { __IS_DEV__: true, __API__: '' },
+    globals: { __IS_DEV__: true, __API__: '', __PROJECT__: 'jest' },
     rootDir: '../../',
     clearMocks: true,
     testEnvironment: 'jsdom',

@@ -14,5 +14,10 @@
   "Введите имя": "Enter username",
   "Форма авторизации": "Authorization Form",
   "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
-  "Профиль": "Profile page"
+  "Профиль": "Profile page",
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Укажите валюту": "Indicate the currency",
+  "Укажите страну": "Indicate the country",
+  "Сохранить": "Save"
 }
