@@ -24,7 +24,6 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 export const ModalDark = Template.bind({});
 ModalDark.args = {
   isOpen: true,
-  lazy: true,
   children:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quoasdasds!',
 };
