@@ -1,4 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
@@ -28,7 +29,7 @@ ModalDark.args = {
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quoasdasds!',
 };
 ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
-ModalDark.parameters = { loki: { skip: true } };
+// ModalDark.parameters = { loki: { skip: true } };
 
 export const Primary = Template.bind({});
 Primary.args = {
