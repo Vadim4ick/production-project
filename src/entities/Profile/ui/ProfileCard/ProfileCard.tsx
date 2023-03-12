@@ -80,8 +80,8 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
       <div className={cls.data}>
         {data?.avatar && (
           <div className={cls.avatarWrapper}>
-            {/* {<ValidateProfileAvatar avatar={data?.avatar} />} */}
-            <Avatar src={data?.avatar} />
+            {<ValidateProfileAvatar avatar={data?.avatar} />}
+            {/* <Avatar src={data?.avatar} /> */}
           </div>
         )}
 

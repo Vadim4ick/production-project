@@ -12,14 +12,20 @@ jest.mock('axios');
 const mockedAxios = jest.mocked(axios);
 
 export class TestAsyncThunk<Return, Arg, RejectedValue> {
-  dispatch: jest.MockedFn<any>;
+  dispatch: jest.Mock<
+    void,
+    [AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>]
+  >;
 
   getState: () => StateSchema;
 
   actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
 
   api: jest.MockedFunctionDeep<AxiosStatic>;
-  navigate: jest.MockedFn<any>;
+  navigate: jest.Mock<
+    void,
+    [AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>]
+  >;
 
   constructor(
     actionCreator: ActionCreatorType<Return, Arg, RejectedValue>,

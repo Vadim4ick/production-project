@@ -23,7 +23,7 @@ function validateProfileAvatar(avatar: string, signal: AbortSignal) {
 export const ValidateProfileAvatar: React.FC<ValidateProfileAvatarProps> = (
   props,
 ) => {
-  const { className, avatar } = props;
+  const { avatar } = props;
 
   const [isValid, setIsValid] = useState(false);
   const errorAvatar =
