@@ -85,8 +85,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
             ) : (
               <Avatar src={data?.avatar} />
             )}
-            {/* {<ValidateProfileAvatar avatar={data?.avatar} />} */}
-            {/* <Avatar src={data?.avatar} /> */}
           </div>
         )}
 
