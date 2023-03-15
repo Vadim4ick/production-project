@@ -1,5 +1,6 @@
 {
   "Статья не найдена": "The article was not found",
   "Произошла ошибка при загрузке статьи": "An error has occurred when loading an article",
-  "Успешно скопировано в буфер обмена!": "Successfully copied to the clipboard!"
+  "Успешно скопировано в буфер обмена!": "Successfully copied to the clipboard!",
+  "Копировать": "Copy"
 }

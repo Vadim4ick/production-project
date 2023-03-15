@@ -10,9 +10,13 @@ declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';
 
+interface ExtendsSVGProps<T> extends React.SVGProps<T> {
+  title?: string | undefined;
+}
+
 declare module '*.svg' {
   import type React from 'react';
-  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
+  const SVG: React.VFC<ExtendsSVGProps<SVGSVGElement>>;
   export default SVG;
 }
 

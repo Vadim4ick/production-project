@@ -17,7 +17,7 @@ export const articleDetailsSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
-    builder.addCase(fetchArticleById.pending, (state, action) => {
+    builder.addCase(fetchArticleById.pending, (state) => {
       state.error = undefined;
       state.isLoading = true;
     });

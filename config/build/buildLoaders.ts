@@ -9,7 +9,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack'],
+    use: [{ loader: '@svgr/webpack', options: { titleProp: true } }],
   };
 
   const fileLoader = {

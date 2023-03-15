@@ -33,7 +33,7 @@ export const Code = memo((props: CodeProps) => {
         className={cls.copyBtn}
         theme={ThemeButton.CLEAR}
       >
-        <IconCopy className={cls.copyIcon} />
+        <IconCopy title={t('Копировать')} className={cls.copyIcon} />
       </Button>
       <code>{text}</code>
       <Modal isOpen={openCopyModal} onClose={() => setOpenCopyModal(false)}>
