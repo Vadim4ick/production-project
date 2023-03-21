@@ -35,3 +35,4 @@ Loading.args = {
   commets: [],
   isLoading: true,
 };
+Loading.parameters = { loki: { skip: true } };
