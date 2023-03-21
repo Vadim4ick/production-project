@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
@@ -22,6 +23,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 import { PageProfileHeader } from './PageProfileHeader/PageProfileHeader';
@@ -41,6 +43,8 @@ const replaceNumber = (val: string) => {
 const ProfilePage = (props: ProfilePageProps) => {
   const { className } = props;
 
+  const { id } = useParams<{ id: string }>();
+
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
@@ -59,11 +63,11 @@ const ProfilePage = (props: ProfilePageProps) => {
 
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstName = useCallback(
     (value?: string) => {

@@ -1,10 +1,16 @@
 {
-  "i18n-ally.localesPaths": "public/locales",
   "i18n-ally.keystyle": "nested",
   "css.validate": true,
   "less.validate": false,
   "scss.validate": true,
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss"],
-  "cSpell.words": ["Загрузка", "найдена"]
+  "cSpell.words": ["Загрузка", "Комментарий", "найдена"],
+  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
+  "i18n-ally.extract.ignoredByFiles": {
+    "src/entities/Comment/ui/CommentList/CommentList.tsx": [
+      "There is no comment"
+    ]
+  },
+  "i18n-ally.extract.ignored": ["There is no comment"]
 }

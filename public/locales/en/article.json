@@ -2,5 +2,8 @@
   "Статья не найдена": "The article was not found",
   "Произошла ошибка при загрузке статьи": "An error has occurred when loading an article",
   "Успешно скопировано в буфер обмена!": "Successfully copied to the clipboard!",
-  "Копировать": "Copy"
+  "Копировать": "Copy",
+  "Comments": "Comments",
+  "enter-the-text-of-the-comment": "Enter the text of the comment",
+  "Send": "Send"
 }
