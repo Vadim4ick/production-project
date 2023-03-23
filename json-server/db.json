@@ -19,9 +19,8 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "userId": "1",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -144,6 +143,12 @@
       "userId": "2",
       "text": "123",
       "id": "40vzHd7"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "6grMoxg"
     }
   ],
   "users": [
@@ -168,8 +173,8 @@
       "first": "Вадим",
       "lastname": "Фирулев",
       "age": "19",
-      "currency": "EUR",
-      "country": "Russia",
+      "currency": "USD",
+      "country": "George",
       "city": "Пермь",
       "username": "admin",
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"

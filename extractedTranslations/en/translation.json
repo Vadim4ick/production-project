@@ -1,13 +1,22 @@
 {
   "": "",
+  "Back to the list": "Back to the list",
   "Comments": "Comments",
   "Profile page": "Profile page",
+  "Read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Send": "Send",
   "There is no comment": "There is no comment",
   "decrement": "",
   "enter-the-text-of-the-comment": "enter-the-text-of-the-comment",
   "forma-avtorizacii": "",
   "increment": "",
+  "read more": "read more",
   "throw Error": "throw Error",
   "throw-error": "throw-error",
   "voiti": "",
@@ -33,6 +42,7 @@
   "Имя пользователя": "Имя пользователя",
   "Комментарий": "Комментарий",
   "Копировать": "Копировать",
+  "Назад к списку": "Назад к списку",
   "Некорректный возраст": "Некорректный возраст",
   "Некорректный регион": "Некорректный регион",
   "О сайте": "О сайте",
@@ -54,5 +64,6 @@
   "Укажите страну": "",
   "Успешно скопировано в буфер обмена!": "Успешно скопировано в буфер обмена!",
   "Форма авторизации": "",
+  "Читать далее": "",
   "Язык": "Язык"
 }

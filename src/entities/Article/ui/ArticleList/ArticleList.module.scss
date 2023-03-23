@@ -1,0 +1,16 @@
+.articleList {
+  display: grid;
+  gap: 20px;
+}
+
+.BIG {
+  &.articleList {
+    grid-template-columns: repeat(auto-fit, 1fr);
+  }
+}
+
+.SMALL {
+  &.articleList {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+}
