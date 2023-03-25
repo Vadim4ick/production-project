@@ -16,6 +16,7 @@
   "enter-the-text-of-the-comment": "enter-the-text-of-the-comment",
   "forma-avtorizacii": "",
   "increment": "",
+  "oops-an-error-arose-go-later": "oops-an-error-arose-go-later",
   "read more": "read more",
   "throw Error": "throw Error",
   "throw-error": "throw-error",
@@ -62,6 +63,18 @@
   "Страница не найдена": "Страница не найдена",
   "Укажите валюту": "",
   "Укажите страну": "",
+  "Упс": {
+    "": {
+      "": {
+        " Возникла ошибка": {
+          "": {
+            "": ""
+          }
+        },
+        " Возникла ошибка, зайди позже": " Возникла ошибка, зайди позже"
+      }
+    }
+  },
   "Успешно скопировано в буфер обмена!": "Успешно скопировано в буфер обмена!",
   "Форма авторизации": "",
   "Читать далее": "",
