@@ -117,6 +117,7 @@ ListSmall.args = {
   })),
   view: ArticleView.SMALL,
 };
+ListSmall.parameters = { loki: { skip: true } };
 
 export const ListBig = Template.bind({});
 ListBig.args = {
