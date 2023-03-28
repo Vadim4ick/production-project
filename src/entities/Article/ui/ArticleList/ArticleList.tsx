@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -25,12 +26,20 @@ const getSkeletons = (view: ArticleView) =>
 
 export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleView.SMALL } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
 
   const renderArticle = (article: Article) =>
     article && (
       <ArticleListItem key={article.id} article={article} view={view} />
     );
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+        <Text size={TextSize.L} title={t('articles-are-not-found')} />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.articleList, {}, [className, cls[view]])}>

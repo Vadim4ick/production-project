@@ -14,12 +14,14 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ScrollRestorationSchema } from 'features/ScrollRestoration';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailesPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  ui: ScrollRestorationSchema;
 
   //Асинхронные редюсеры
   loginForm?: LoginSchema;
@@ -32,11 +34,16 @@ export interface StateSchema {
 
 export type StateSchemaKey = keyof StateSchema;
 
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
+
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
+
+  //true - редюсер вмонтирован, false - демонтирован
+  getMountendReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
@@ -45,7 +52,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArt {
   api: AxiosInstance;
-  navigate?: (to: To, options?: NavigateOptions | undefined) => void;
 }
 
 export interface ThunkConfig<T> {

@@ -1,33 +1,31 @@
 import {
   CombinedState,
-  EnhancedStore,
   Reducer,
   ReducersMapObject,
   configureStore,
 } from '@reduxjs/toolkit';
-import { NavigateOptions, To } from 'react-router-dom';
 
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
+import { scrollRestorationReducer } from 'features/ScrollRestoration';
 import { $api } from 'shared/api/api';
 
-import { ReducerManager, StateSchema } from './StateSchema';
+import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    ui: scrollRestorationReducer,
   };
 
   const extraArgument = {
     api: $api,
-    navigate,
   };
 
   const reducerManager = createReducerManager(rootReducers);

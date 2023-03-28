@@ -8,5 +8,17 @@
   "Send": "Отправить",
   "read more": "Читать далее...",
   "Back to the list": "Назад к списку",
-  "oops-an-error-arose-go-later": "Упс... Возникла ошибка, зайди позже"
+  "oops-an-error-arose-go-later": "Упс... Возникла ошибка, зайди позже",
+  "Sort by": "Сортировать ПО",
+  "on": "По",
+  "increasing": "Возрастанию",
+  "descending": "Убыванию",
+  "The date of creation": "Дате создания",
+  "name": "Названию",
+  "views": "Просмотрам",
+  "All articles": "Все статьи",
+  "it": "Айти",
+  "economy": "Экономика",
+  "science": "Наука",
+  "articles-are-not-found": "Статьи не найдены"
 }

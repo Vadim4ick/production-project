@@ -1,20 +1,20 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# echo "Lint TS"
-# npm run lint:ts
+echo "Lint TS"
+npm run lint:ts
 
-# echo "Lint Styles"
-# npm run lint:scss
+echo "Lint Styles"
+npm run lint:scss
 
-# echo "Npm Testing UNIT"
-# npm run test:unit
+echo "Npm Testing UNIT"
+npm run test:unit
 
-# echo "build storybook"
-# npm run storybook:build
+echo "build storybook"
+npm run storybook:build
 
-# echo "Npm Testing ui"
-# npm run test:ui
+echo "Npm Testing ui"
+npm run test:ui
 
-# echo "Build product"
-# npm run build:prod
+echo "Build product"
+npm run build:prod
