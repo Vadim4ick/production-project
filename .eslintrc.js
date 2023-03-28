@@ -40,7 +40,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] },
     ],
     semi: 'off',
     '@typescript-eslint/semi': 'off',

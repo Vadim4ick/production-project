@@ -6,7 +6,6 @@ import { Comment } from 'entities/Comment';
 import { getAuthUserData } from 'entities/User';
 
 import { articleDetailsCommentsActions } from '../../slices/articleDetailsCommentsSlice';
-import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export const addCommentForArticle = createAsyncThunk<
   Comment,
@@ -40,7 +39,6 @@ export const addCommentForArticle = createAsyncThunk<
     };
 
     dispatch(articleDetailsCommentsActions.addComment(newComment));
-    // dispatch(fetchCommentsByArticleId(article.id));
 
     return response.data;
   } catch (error) {

@@ -8,8 +8,10 @@ import {
 describe('comments', () => {
   test('test article comments isLoading', () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: {
-        isLoading: true,
+      articleDetailsPage: {
+        comments: {
+          isLoading: true,
+        },
       },
     };
 
@@ -17,8 +19,10 @@ describe('comments', () => {
   });
   test('test article comments Error', () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: {
-        error: 'error',
+      articleDetailsPage: {
+        comments: {
+          error: 'error',
+        },
       },
     };
 
@@ -26,7 +30,9 @@ describe('comments', () => {
   });
   test('test article comments Undefined', () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: {},
+      articleDetailsPage: {
+        comments: {},
+      },
     };
 
     expect(getArticleCommentsError(state as StateSchema)).toEqual(undefined);
