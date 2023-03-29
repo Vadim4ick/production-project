@@ -4,7 +4,7 @@ import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { Article } from 'entities/Article';
 
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { ArticleDetailsPageRecommendationsSchema } from '../types/articleDetailsPageRecommendationsSchema';
+import { ArticleDetailsPageRecommendationsSchema } from '../types/ArticleDetailsPageRecommendationsSchema';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
