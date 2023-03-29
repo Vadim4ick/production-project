@@ -54,8 +54,10 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   });
 
   const onLoadNextPart = useCallback(() => {
-    if (!error) {
-      dispatch(fetchNextArticlesPage());
+    if (__PROJECT__ !== 'storybook') {
+      if (!error) {
+        dispatch(fetchNextArticlesPage());
+      }
     }
   }, [dispatch, error]);
 

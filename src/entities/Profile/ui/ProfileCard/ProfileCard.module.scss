@@ -21,6 +21,14 @@
   justify-content: center;
 }
 
+.inputsBlock {
+  cursor: not-allowed;
+}
+
 .editing {
   border: 2px solid var(--inverted-primary-color);
+
+  .inputsBlock {
+    cursor: pointer;
+  }
 }

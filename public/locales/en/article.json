@@ -21,5 +21,8 @@
   "economy": "Economy",
   "science": "Science",
   "articles-are-not-found": "Articles are not found",
-  "we-recommend": "We recommend"
+  "we-recommend": "We recommend",
+  "edit": "Edit",
+  "editing-an-article-with-id": "Editing an article with ID = ",
+  "sozdanie-novoi-stati": "Creating a new article"
 }

@@ -129,6 +129,7 @@ const ProfilePage = (props: ProfilePageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames('', {}, [className])}>
         <PageProfileHeader />
+
         {validateErrors?.length &&
           validateErrors.map((err) => (
             <Text

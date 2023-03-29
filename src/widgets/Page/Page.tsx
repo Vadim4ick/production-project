@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
+import { MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ interface PageProps {
   isLoading?: boolean;
 }
 
-export const Page = memo((props: PageProps) => {
+export const Page = (props: PageProps) => {
   const { className, children, onScrollEnd, isLoading } = props;
 
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -64,4 +64,4 @@ export const Page = memo((props: PageProps) => {
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </section>
   );
-});
+};

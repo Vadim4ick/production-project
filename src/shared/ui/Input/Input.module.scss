@@ -17,6 +17,10 @@
 
 .readonly {
   opacity: 0.7;
+
+  input {
+    cursor: not-allowed;
+  }
 }
 
 .placeholder {
