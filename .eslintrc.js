@@ -17,7 +17,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'vadim-firulyov-plugin',
+    // 'ulbi-tv-plugin',
+  ],
   rules: {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
@@ -40,7 +47,20 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] },
+      {
+        markupOnly: true,
+        ignoreAttribute: [
+          'data-testid',
+          'to',
+          'target',
+          'direction',
+          'justify',
+          'align',
+          'gap',
+          'role',
+          'as',
+        ],
+      },
     ],
     semi: 'off',
     '@typescript-eslint/semi': 'off',
@@ -52,6 +72,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
     'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
     'react/display-name': 'off',
+    'vadim-firulyov-plugin/path-checker': 'error',
+    // 'ulbi-tv-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

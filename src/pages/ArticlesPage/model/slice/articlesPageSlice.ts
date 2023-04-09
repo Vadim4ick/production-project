@@ -29,7 +29,7 @@ export const articlesPageSlice = createSlice({
   name: 'articlesPageSlice',
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
     isLoading: false,
-    ids: ['1', '2'],
+    ids: [],
     error: undefined,
     entities: {},
     view: ArticleView.SMALL,

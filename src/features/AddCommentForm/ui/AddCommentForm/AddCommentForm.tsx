@@ -10,6 +10,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack } from 'shared/ui/Stack';
 
 import {
   getAddCommentFormError,
@@ -54,7 +55,11 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack
+        justify="between"
+        max
+        className={classNames(cls.addCommentForm, {}, [className])}
+      >
         <Input
           className={cls.input}
           placeholder={t('enter-the-text-of-the-comment')}
@@ -65,7 +70,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         <Button onClick={onSendHandler} theme={ThemeButton.OUTLINE}>
           {t(`Send`)}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

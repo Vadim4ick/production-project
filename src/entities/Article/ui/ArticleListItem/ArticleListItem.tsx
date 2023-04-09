@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import EyeIcon from 'shared/assets/icons/eye2.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX } from 'shared/const/localstorage';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -26,19 +27,27 @@ interface ArticleListItemProps {
   article: Article;
   view: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  index: number;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target } = props;
+  const { className, article, view, target, index } = props;
   const { t } = useTranslation('article');
 
-  const types = <Text text={article.type.join(', ')} className={cls.types} />;
+  const types = <Text text={article?.type.join(', ')} className={cls.types} />;
   const views = (
     <>
-      <Text text={String(article.views)} className={cls.views} />
+      <Text text={String(article?.views)} className={cls.views} />
       <Icon Svg={EyeIcon} />
     </>
   );
+
+  // const handleButtonClick = () => {
+  //   sessionStorage.setItem(
+  //     ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX,
+  //     JSON.stringify(index),
+  //   );
+  // };
 
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find(
@@ -83,14 +92,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={RoutePath.article_details + article?.id}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
     >
       <Card>
         <div className={cls.imageWrapper}>
-          <img alt={article.title} src={article.img} className={cls.img} />
+          <img alt={article?.title} src={article?.img} className={cls.img} />
 
-          <Text text={article.createdAt} className={cls.date} />
+          <Text text={article?.createdAt} className={cls.date} />
         </div>
 
         <div className={cls.infoWrapper}>
@@ -98,7 +107,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {views}
         </div>
 
-        <Text text={article.title} className={cls.title} />
+        <Text text={article?.title} className={cls.title} />
       </Card>
     </AppLink>
   );
