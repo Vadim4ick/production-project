@@ -12,7 +12,6 @@ const MainPage = () => {
       {t('Главная страница')}
       <HStack>
         <Select
-          onChange={(value: string) => {}}
           value={undefined}
           options={[
             { value: '1', content: '1' },
