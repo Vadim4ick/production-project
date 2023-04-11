@@ -9,18 +9,20 @@ import { AxiosInstance } from 'axios';
 
 import { ArticleDetailsSchema } from 'entities/Article/model/types/articleDetailsSchema';
 import { CounterSchema } from 'entities/Counter';
-import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ScrollRestorationSchema } from 'features/ScrollRestoration';
+import { ProfileSchema } from 'features/editableProfileCard';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailesPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   ui: ScrollRestorationSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   //Асинхронные редюсеры
   loginForm?: LoginSchema;

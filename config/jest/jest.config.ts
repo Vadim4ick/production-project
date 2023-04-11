@@ -31,6 +31,19 @@ export default async () => {
       '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
       ...pathMocks,
     },
+
+    reporters: [
+      'default',
+      [
+        'jest-html-reporters',
+        {
+          publicPath: '<rootDir>/reports/unit',
+          filename: 'report.html',
+          openReport: true,
+          inlineSource: true,
+        },
+      ],
+    ],
   };
 
   return config;

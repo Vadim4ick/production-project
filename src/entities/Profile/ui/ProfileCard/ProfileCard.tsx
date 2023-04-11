@@ -98,7 +98,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
         </div>
       )}
 
-      <VStack gap="8" className={cls.inputsBlock}>
+      <VStack max align={'none'} gap="8" className={cls.inputsBlock}>
         <Input
           value={data?.first}
           className={cls.input}

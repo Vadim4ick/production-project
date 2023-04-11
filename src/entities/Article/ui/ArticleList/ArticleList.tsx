@@ -1,6 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
+import { Virtuoso } from 'react-virtuoso';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextSize } from 'shared/ui/Text/Text';
@@ -11,6 +12,19 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
 import cls from './ArticleList.module.scss';
+
+window.addEventListener('error', (e) => {
+  if (
+    e.message ===
+      'ResizeObserver loop completed with undelivered notifications.' ||
+    e.message === 'ResizeObserver loop limit exceeded'
+  ) {
+    console.log(e);
+
+    e.stopImmediatePropagation();
+    return;
+  }
+});
 
 interface ArticleListProps {
   className?: string;
