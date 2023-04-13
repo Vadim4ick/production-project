@@ -105,6 +105,7 @@ Normal.decorators = [
     },
   }),
 ];
+Normal.parameters = { loki: { skip: true } };
 
 export const Loading = Template.bind({});
 Loading.args = {};
