@@ -61,7 +61,8 @@ export function ListBox(props: ListBoxProps) {
       {label && <span className={cls.label}>{label + '>'}</span>}
       <div className={cls.listBox}>
         <HListBox.Button className={cls.trigger}>
-          <Button>{value ?? defaultValue}</Button>
+          {/* <Button>{value ?? defaultValue}</Button> */}
+          {value ?? defaultValue}
         </HListBox.Button>
 
         <HListBox.Options

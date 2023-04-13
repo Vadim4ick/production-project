@@ -27,7 +27,7 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 
 interface EditableProfileCardProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const replaceNumber = (val: string) => {
@@ -131,6 +131,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
               theme={TextTheme.ERROR}
               text={validateErrorTranslates[err]}
               key={err}
+              data-testid={'EditableProfileCard.Error'}
             />
           ))}
 

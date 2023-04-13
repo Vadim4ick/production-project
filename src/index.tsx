@@ -1,4 +1,4 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { ErrorBounderay } from 'app/providers/ErrorBounderay';
@@ -9,7 +9,17 @@ import 'shared/config/i18n/i18n';
 
 import App from './app/App';
 
-render(
+const container = document.getElementById('root');
+
+if (!container) {
+  throw new Error(
+    'Контейнер root не найден. НЕ удалось вмонтировать реакт приложение',
+  );
+}
+
+const root = createRoot(container);
+
+root.render(
   <BrowserRouter>
     <StoreProvider>
       <ErrorBounderay>
@@ -19,6 +29,4 @@ render(
       </ErrorBounderay>
     </StoreProvider>
   </BrowserRouter>,
-
-  document.getElementById('root'),
 );

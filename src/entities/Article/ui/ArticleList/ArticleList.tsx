@@ -1,9 +1,11 @@
+/* eslint-disable react/jsx-key */
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { Virtuoso } from 'react-virtuoso';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { HStack } from 'shared/ui/Stack';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { PAGE_ID } from 'widgets/Page/Page';
 
@@ -32,6 +34,7 @@ interface ArticleListProps {
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -48,6 +51,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     isLoading,
     view = ArticleView.SMALL,
     target,
+    virtualized = true,
   } = props;
 
   const { t } = useTranslation('article');
@@ -71,7 +75,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
           article={articles[i]}
           view={view}
           key={`str, ${i}`}
-          index={0}
         />,
       );
     }
@@ -96,6 +99,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
+    // @ts-ignore
     <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
       {({
         height,
@@ -107,9 +111,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
       }) => (
         <div
           className={classNames(cls.articleList, {}, [className, cls[view]])}
+          // @ts-ignore
           ref={registerChild}
         >
-          {articles.length > 0 && (
+          {virtualized && articles.length > 0 ? (
+            // @ts-ignore
             <List
               height={height}
               rowCount={rowCount}
@@ -121,6 +127,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
               isScrolling={isScrolling}
               scrollTop={scrollTop}
             />
+          ) : (
+            articles.map((item, index) => (
+              <ArticleListItem
+                article={item}
+                view={view}
+                target={target}
+                key={item.id}
+                className={cls.card}
+              />
+            ))
           )}
 
           {isLoading && getSkeletons(view)}

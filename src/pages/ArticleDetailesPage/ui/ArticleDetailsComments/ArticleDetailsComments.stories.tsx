@@ -14,9 +14,7 @@ export default {
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
 const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => (
-  <Suspense fallback={<div>Loading...</div>}>
-    <ArticleDetailsComments {...args} />
-  </Suspense>
+  <ArticleDetailsComments {...args} />
 );
 
 export const Normal = Template.bind({});

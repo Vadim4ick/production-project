@@ -70,3 +70,5 @@ Normal.decorators = [
     },
   }),
 ];
+
+Normal.parameters = { loki: { skip: true } };

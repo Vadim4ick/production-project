@@ -10,11 +10,12 @@
 
 .trigger {
   position: relative;
-  background: none;
-  border: none;
   outline: none;
-  padding: 0;
   margin: 0;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: none;
+  padding: 5px 8px;
 }
 
 .options {

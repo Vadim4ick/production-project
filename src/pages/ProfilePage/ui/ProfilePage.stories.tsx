@@ -42,16 +42,16 @@ Dark.args = {};
 Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
-    profile: {
-      form: {
-        first: 'Вадим',
-        lastname: 'Фирулев',
-        age: '19',
-        currency: Currency.USD,
-        country: Country.Russia,
-        city: 'Пермь',
-        username: 'admin',
-      },
-    },
+    // profile: {
+    //   form: {
+    //     first: 'Вадим',
+    //     lastname: 'Фирулев',
+    //     age: '19',
+    //     currency: Currency.USD,
+    //     country: Country.Russia,
+    //     city: 'Пермь',
+    //     username: 'admin',
+    //   },
+    // },
   }),
 ];

@@ -27,11 +27,10 @@ interface ArticleListItemProps {
   article: Article;
   view: ArticleView;
   target?: HTMLAttributeAnchorTarget;
-  index: number;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target, index } = props;
+  const { className, article, view, target } = props;
   const { t } = useTranslation('article');
 
   const types = <Text text={article?.type.join(', ')} className={cls.types} />;

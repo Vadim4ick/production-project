@@ -1,8 +1,14 @@
+/* eslint-disable indent */
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getAuthUserData, userActions } from 'entities/User';
+import {
+  getAuthUserData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+} from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -20,10 +26,13 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
+
   const dispatch = useDispatch();
   const [isAuthModal, setIsAuthModal] = useState(false);
 
   const authData = useSelector(getAuthUserData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal((prev) => !prev);
@@ -32,6 +41,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const onLogoutModal = useCallback(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
+
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   if (authData) {
     return (
@@ -53,8 +64,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           direction="bottom left"
           className={cls.dropdown}
           items={[
+            ...(isAdminPanelAvailable
+              ? [
+                  {
+                    content: t('adminka'),
+                    href: RoutePath.admin_panel,
+                  },
+                ]
+              : []),
             {
-              content: t('Профиль'),
+              content: t('my-profile'),
               href: RoutePath.profile + authData.id,
             },
             { content: t('Выйти'), onClick: onLogoutModal },
