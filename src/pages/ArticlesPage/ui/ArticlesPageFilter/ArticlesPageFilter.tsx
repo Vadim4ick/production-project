@@ -41,6 +41,8 @@ export const ArticlesPageFilter = memo((props: ArticlesPageFilterProps) => {
   const search = useSelector(getArticlesPageSearch);
   const type = useSelector(getArticlesPageType);
 
+  console.log(view);
+
   const dispatch = useAppDispatch();
 
   const fetchData = useCallback(() => {

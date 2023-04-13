@@ -27,10 +27,11 @@ interface ArticleListItemProps {
   article: Article;
   view: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  index?: number;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target } = props;
+  const { className, article, view, target, index } = props;
   const { t } = useTranslation('article');
 
   const types = <Text text={article?.type.join(', ')} className={cls.types} />;
@@ -41,12 +42,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     </>
   );
 
-  // const handleButtonClick = () => {
-  //   sessionStorage.setItem(
-  //     ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX,
-  //     JSON.stringify(index),
-  //   );
-  // };
+  const handleButtonClick = () => {
+    sessionStorage.setItem(
+      ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX,
+      JSON.stringify(index),
+    );
+  };
 
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find(
@@ -76,6 +77,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
           <div className={cls.footer}>
             <AppLink
+              onClick={handleButtonClick}
               target={target}
               to={RoutePath.article_details + article.id}
             >
@@ -90,6 +92,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   return (
     <AppLink
+      onClick={handleButtonClick}
       target={target}
       to={RoutePath.article_details + article?.id}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}

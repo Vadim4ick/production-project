@@ -18,10 +18,11 @@ import { getArticles } from '../../model/slice/articlesPageSlice';
 
 interface ArticleInfiniteListProps {
   className?: string;
+  onLoadNextPart?: () => void;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-  const { className } = props;
+  const { className, onLoadNextPart } = props;
 
   const { t } = useTranslation('article');
 
@@ -34,9 +35,9 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 
   const dispatch = useAppDispatch();
 
-  useInitialEffect(() => {
-    dispatch(initArticlesPage(searchParams));
-  });
+  // useInitialEffect(() => {
+  //   dispatch(initArticlesPage(searchParams));
+  // });
 
   if (error) {
     return (
@@ -53,6 +54,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     <ArticleList
       className={className}
       isLoading={isLoading}
+      onLoadNextPart={onLoadNextPart}
       view={view}
       articles={articles}
     />

@@ -36,7 +36,7 @@ export const articlesPageSlice = createSlice({
     page: 1,
     hasMore: true,
     _inited: false,
-    limit: 9,
+    limit: 8,
     sort: ArticleSortField.CREATED,
     search: '',
     order: 'asc',
@@ -66,6 +66,8 @@ export const articlesPageSlice = createSlice({
       const view = localStorage.getItem(
         ARTICLE_VIEW_LOCALSTORAGE_KEY,
       ) as ArticleView;
+
+      console.log('view', view);
 
       state.view = view;
       state.limit = view === ArticleView.BIG ? 4 : 8;
