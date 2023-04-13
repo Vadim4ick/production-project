@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { Article, ArticleView } from '../../model/types/article';
 
 import { ArticleListItem } from './ArticleListItem';
@@ -10,6 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleListItem>;
 
 const article = {

@@ -1,11 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
 
 import { ArticleList } from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { getScrollIndex } from 'features/ScrollRestoration/model/selectors/scrollRestoration';
 import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 
 import {
@@ -13,7 +11,6 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 
 interface ArticleInfiniteListProps {
@@ -26,18 +23,12 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 
   const { t } = useTranslation('article');
 
-  const [searchParams] = useSearchParams();
-
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageError);
   const view = useSelector(getArticlesPageView);
 
-  const dispatch = useAppDispatch();
-
-  // useInitialEffect(() => {
-  //   dispatch(initArticlesPage(searchParams));
-  // });
+  const scrollIdx = useSelector(getScrollIndex);
 
   if (error) {
     return (
@@ -55,6 +46,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
       className={className}
       isLoading={isLoading}
       onLoadNextPart={onLoadNextPart}
+      scrollIdx={scrollIdx}
       view={view}
       articles={articles}
     />

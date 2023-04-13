@@ -67,8 +67,6 @@ export const articlesPageSlice = createSlice({
         ARTICLE_VIEW_LOCALSTORAGE_KEY,
       ) as ArticleView;
 
-      console.log('view', view);
-
       state.view = view;
       state.limit = view === ArticleView.BIG ? 4 : 8;
       state._inited = true;

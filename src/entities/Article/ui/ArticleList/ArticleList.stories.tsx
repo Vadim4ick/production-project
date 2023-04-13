@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { Article, ArticleView } from '../../model/types/article';
 
 import { ArticleList } from './ArticleList';
@@ -10,6 +12,8 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: { loki: { skip: true } },
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleList>;
 
 const Template: ComponentStory<typeof ArticleList> = (args) => (
@@ -98,7 +102,6 @@ isLoadingBig.args = {
   articles: [],
   view: ArticleView.BIG,
 };
-isLoadingBig.parameters = { loki: { skip: true } };
 
 export const isLoadingSmall = Template.bind({});
 isLoadingSmall.args = {
@@ -106,23 +109,21 @@ isLoadingSmall.args = {
   articles: [],
   view: ArticleView.SMALL,
 };
-isLoadingSmall.parameters = { loki: { skip: true } };
 
 export const ListSmall = Template.bind({});
 ListSmall.args = {
   isLoading: false,
-  articles: new Array(8).fill(0).map((item, index) => ({
+  articles: new Array(2).fill(0).map((item, index) => ({
     ...article,
     id: String(index),
   })),
   view: ArticleView.SMALL,
 };
-// ListSmall.parameters = { loki: { skip: true } };
 
 export const ListBig = Template.bind({});
 ListBig.args = {
   isLoading: false,
-  articles: new Array(3).fill(0).map((item, index) => ({
+  articles: new Array(2).fill(0).map((item, index) => ({
     ...article,
     id: String(index),
   })),

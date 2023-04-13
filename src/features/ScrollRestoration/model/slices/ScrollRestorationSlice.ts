@@ -4,6 +4,8 @@ import { ScrollRestorationSchema } from './../types/ScrollRestorationSchema';
 
 const initialState: ScrollRestorationSchema = {
   scroll: {},
+
+  idx: 0,
 };
 
 export const scrollRestorationSlice = createSlice({
@@ -15,6 +17,10 @@ export const scrollRestorationSlice = createSlice({
       action: PayloadAction<{ path: string; position: number }>,
     ) => {
       state.scroll[action.payload.path] = action.payload.position;
+    },
+
+    setScrollIndex: (state, action: PayloadAction<number>) => {
+      state.idx = action.payload;
     },
   },
 });

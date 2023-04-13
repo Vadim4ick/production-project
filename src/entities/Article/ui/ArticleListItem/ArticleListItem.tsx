@@ -1,10 +1,11 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { scrollRestorationActions } from 'features/ScrollRestoration';
 import EyeIcon from 'shared/assets/icons/eye2.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX } from 'shared/const/localstorage';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
@@ -34,6 +35,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { className, article, view, target, index } = props;
   const { t } = useTranslation('article');
 
+  const dispatch = useAppDispatch();
+
   const types = <Text text={article?.type.join(', ')} className={cls.types} />;
   const views = (
     <>
@@ -43,10 +46,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
 
   const handleButtonClick = () => {
-    sessionStorage.setItem(
-      ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX,
-      JSON.stringify(index),
-    );
+    dispatch(scrollRestorationActions.setScrollIndex(index as number));
   };
 
   if (view === ArticleView.BIG) {

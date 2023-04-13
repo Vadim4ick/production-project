@@ -29,12 +29,17 @@ export const ArticleRecommendationsList = memo(
     }
 
     return (
-      // <VStack gap={'8'} className={classNames('', {}, [className])}>
       <>
         <Text size={TextSize.L} title={t('we-recommend')} />
-        <ArticleList virtualized={false} target="_blank" articles={articles} />
+
+        <HStack gap={'32'} className={classNames('', {}, [className])}>
+          <ArticleList
+            virtualized={false}
+            target="_blank"
+            articles={articles}
+          />
+        </HStack>
       </>
-      // </VStack>
     );
   },
 );

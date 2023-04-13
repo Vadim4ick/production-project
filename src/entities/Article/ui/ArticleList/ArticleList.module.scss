@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.recommendationsList {
+  display: flex;
+}
+
 .BIG {
   // &.articleList {
   //   grid-template-columns: repeat(auto-fit, 1fr);
@@ -33,6 +37,12 @@
 
 .skeleton {
   padding-bottom: 30px;
+
+  &.SMALL {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    row-gap: 15px;
+  }
 }
 
 .itemContainer {
