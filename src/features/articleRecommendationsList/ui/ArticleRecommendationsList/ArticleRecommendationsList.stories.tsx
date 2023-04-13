@@ -8,7 +8,7 @@ import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const article: Article = {
   id: '1',
-  img: '',
+  img: 'https://arduinomaster.ru/wp-content/uploads/2018/01/python.jpg',
   blocks: [],
   type: [],
   user: { id: '1', username: '123' },
