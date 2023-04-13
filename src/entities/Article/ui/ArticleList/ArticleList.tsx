@@ -8,7 +8,6 @@ import {
   useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 
 import { ArticlesPageFilter } from 'pages/ArticlesPage/ui/ArticlesPageFilter/ArticlesPageFilter';
