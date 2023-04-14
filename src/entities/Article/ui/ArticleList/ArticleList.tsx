@@ -30,7 +30,7 @@ const renderSkeleton = (view: ArticleView) =>
       <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
     ));
 
-const Header = () => <ArticlesPageFilter className={cls.list} />;
+const Header = () => <ArticlesPageFilter className={cls.filter} />;
 
 const ItemContainerComp = ({
   height,
