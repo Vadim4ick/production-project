@@ -6,7 +6,6 @@ import { getArticlesPageInited } from '../../selectors/articlesPageSelectors';
 import { articlesPageActions } from '../../slice/articlesPageSlice';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
-import { ArticleSortField } from './../../../../../entities/Article/model/types/article';
 import { SortOrder } from './../../../../../shared/types/index';
 
 interface IActionMap<T> {

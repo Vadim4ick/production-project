@@ -1,8 +1,8 @@
-export { ArticleDetailsPageRecommendationsSchema } from './model/types/ArticleDetailsPageRecommendationsSchema';
-export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
+export type { ArticleDetailsPageRecommendationsSchema } from './model/types/ArticleDetailsPageRecommendationsSchema';
+export type { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
 export { ArticleDetailesPageAsync as ArticleDetailesPage } from './ui/ArticleDetailesPage/ArticleDetailesPage.async';
 export {
   articleDetailsCommentsReducer,
   getArticleComments,
 } from './model/slices/articleDetailsCommentsSlice';
-export { ArticleDetailsPageSchema } from './model/types';
+export type { ArticleDetailsPageSchema } from './model/types';

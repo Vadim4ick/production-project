@@ -1,12 +1,18 @@
-import { HTMLAttributeAnchorTarget, memo, useEffect, useRef } from 'react';
+import {
+  HTMLAttributeAnchorTarget,
+  MemoExoticComponent,
+  memo,
+  useEffect,
+  useRef,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 
-import { ArticlesPageFilter } from 'pages/ArticlesPage/ui/ArticlesPageFilter/ArticlesPageFilter';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
@@ -21,6 +27,7 @@ interface ArticleListProps {
   virtualized?: boolean;
   onLoadNextPart?: () => void;
   scrollIdx?: number;
+  ArticlesPageFilter?: JSX.Element;
 }
 
 const renderSkeleton = (view: ArticleView) =>
@@ -29,8 +36,6 @@ const renderSkeleton = (view: ArticleView) =>
     .map((item, index) => (
       <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
     ));
-
-const Header = () => <ArticlesPageFilter className={cls.filter} />;
 
 const ItemContainerComp = ({
   height,
@@ -60,11 +65,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
     virtualized = true,
     onLoadNextPart,
     scrollIdx,
+    ArticlesPageFilter,
   } = props;
 
   const { t } = useTranslation('article');
 
   const virtuosoGridRef = useRef<VirtuosoGridHandle>(null);
+
+  const Header = () => ArticlesPageFilter!;
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;

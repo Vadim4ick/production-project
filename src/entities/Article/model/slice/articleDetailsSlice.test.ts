@@ -1,6 +1,6 @@
+import { ArticleType } from '../consts/articleConsts';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../slice/articleDetailsSlice';
-import { ArticleType } from '../types/article';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 
 const data = {

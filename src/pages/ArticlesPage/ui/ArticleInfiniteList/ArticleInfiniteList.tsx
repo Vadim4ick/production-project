@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { ArticleList } from 'entities/Article';
+import { scrollRestorationActions } from 'features/ScrollRestoration';
 import { getScrollIndex } from 'features/ScrollRestoration/model/selectors/scrollRestoration';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 
 import {
@@ -12,6 +14,7 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slice/articlesPageSlice';
+import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 
 interface ArticleInfiniteListProps {
   className?: string;
@@ -49,6 +52,8 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
       scrollIdx={scrollIdx}
       view={view}
       articles={articles}
+      virtualized={true}
+      ArticlesPageFilter={<ArticlesPageFilter />}
     />
   );
 });
