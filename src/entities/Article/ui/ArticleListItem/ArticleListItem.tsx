@@ -1,7 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { scrollRestorationActions } from 'features/ScrollRestoration';
 import EyeIcon from 'shared/assets/icons/eye2.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -28,10 +27,11 @@ interface ArticleListItemProps {
   view: ArticleView;
   target?: HTMLAttributeAnchorTarget;
   index?: number;
+  setScrollIdx?: () => void;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target, index } = props;
+  const { className, article, view, target, index, setScrollIdx } = props;
   const { t } = useTranslation('article');
 
   const dispatch = useAppDispatch();
@@ -45,7 +45,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
 
   const handleButtonClick = () => {
-    dispatch(scrollRestorationActions.setScrollIndex(index as number));
+    index && dispatch(setScrollIdx);
   };
 
   if (view === ArticleView.BIG) {

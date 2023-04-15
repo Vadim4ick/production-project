@@ -1,15 +1,9 @@
-import {
-  HTMLAttributeAnchorTarget,
-  MemoExoticComponent,
-  memo,
-  useEffect,
-  useRef,
-} from 'react';
+import { HTMLAttributeAnchorTarget, memo, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 
 import { ArticleView } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
@@ -28,6 +22,7 @@ interface ArticleListProps {
   onLoadNextPart?: () => void;
   scrollIdx?: number;
   ArticlesPageFilter?: JSX.Element;
+  setScrollIdx?: (action: number) => void;
 }
 
 const renderSkeleton = (view: ArticleView) =>
@@ -66,6 +61,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     onLoadNextPart,
     scrollIdx,
     ArticlesPageFilter,
+    setScrollIdx,
   } = props;
 
   const { t } = useTranslation('article');
@@ -122,6 +118,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           key={`str${index}`}
           index={index}
           className={cls.card}
+          setScrollIdx={(setScrollIdx && setScrollIdx(index)) ?? undefined}
         />
       </div>
     );

@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { ArticleList } from 'entities/Article';
 import { scrollRestorationActions } from 'features/ScrollRestoration';
 import { getScrollIndex } from 'features/ScrollRestoration/model/selectors/scrollRestoration';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 
 import {
@@ -54,6 +53,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
       articles={articles}
       virtualized={true}
       ArticlesPageFilter={<ArticlesPageFilter />}
+      setScrollIdx={scrollRestorationActions.setScrollIndex}
     />
   );
 });
