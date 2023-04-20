@@ -11,7 +11,7 @@ export async function getPathMocks() {
     .map((dirent) => dirent.name);
 
   const mocks = dirNames.reduce<Record<string, string>>((acc, dirName) => {
-    const key = `^${dirName}/(.*)$`;
+    const key = `^@/${dirName}/(.*)$`;
     const value = `<rootDir>/src/${dirName}/$1`;
     acc[key] = value;
 

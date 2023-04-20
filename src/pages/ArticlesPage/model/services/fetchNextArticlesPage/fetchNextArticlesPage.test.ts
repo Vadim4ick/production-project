@@ -57,7 +57,7 @@
 //     expect(fetchArticlesList).not.toHaveBeenCalled();
 //   });
 // });
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 

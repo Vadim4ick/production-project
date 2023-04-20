@@ -1,11 +1,12 @@
-import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { EditableProfileCard } from 'features/editableProfileCard';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { VStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text/Text';
-import { Page } from 'widgets/Page/Page';
+import { getAuthUserData } from '@/entities/User';
+import { EditableProfileCard } from '@/features/editableProfileCard';
+import { ProfileRating } from '@/features/profileRating/ui/ProfileRating/ProfileRating';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page/Page';
 
 interface ProfilePageProps {
   className?: string;
@@ -16,9 +17,16 @@ const ProfilePage = (props: ProfilePageProps) => {
 
   const { id } = useParams<{ id: string }>();
 
+  const userData = useSelector(getAuthUserData);
+
+  if (!id) {
+    return null;
+  }
+
   return (
     <Page className={classNames('', {}, [className])}>
       <VStack max gap="16">
+        {userData?.id !== id ? <ProfileRating profileId={id} /> : null}
         <EditableProfileCard id={id} />
       </VStack>
     </Page>

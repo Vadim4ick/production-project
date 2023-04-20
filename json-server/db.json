@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -696,6 +730,83 @@
       "city": "Краснокамск",
       "username": "Vadim003",
       "avatar": "https://kolchvesti.ru/wp-content/uploads/2021/07/haker.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Супер статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "5uc-oEB"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "feedback": "",
+      "id": "u2fIV_K"
+    },
+    {
+      "userId": "1",
+      "articleId": "13",
+      "rate": 2,
+      "feedback": "Да, не плохая статья на самом деле",
+      "id": "7Q6nfhw"
+    },
+    {
+      "userId": "1",
+      "articleId": "14",
+      "rate": 5,
+      "feedback": "Не плохая статья",
+      "id": "VUoDMfq"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 3,
+      "id": "c-yDQAl"
+    },
+    {
+      "userId": "1",
+      "articleId": "16",
+      "rate": 1,
+      "feedback": "супер",
+      "id": "EjPpKCo"
+    },
+    {
+      "userId": "1",
+      "articleId": "18",
+      "rate": 3,
+      "id": "L-Amiym"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 3,
+      "id": "zwnJfHR"
     }
   ]
 }

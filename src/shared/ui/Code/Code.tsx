@@ -1,8 +1,8 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import IconCopy from 'shared/assets/icons/copy.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
+import IconCopy from '@/shared/assets/icons/copy.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { Button, ThemeButton } from '../Button/Button';
 import { Modal } from '../Modal/Modal';

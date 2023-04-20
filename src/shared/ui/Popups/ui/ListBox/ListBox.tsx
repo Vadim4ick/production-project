@@ -1,12 +1,13 @@
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from 'shared/types/ui';
+import { Button } from '../../../Button/Button';
+import { mapDirectionClass } from '../../styles/consts';
 
-import { Button } from '../Button/Button';
-
+import popupCls from './../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 
 export interface ListBoxItem {
   value: string;
@@ -24,13 +25,6 @@ interface ListBoxProps {
   label?: string;
   direction?: DropdownDirection;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight,
-};
 
 export function ListBox(props: ListBoxProps) {
   const {
@@ -59,10 +53,12 @@ export function ListBox(props: ListBoxProps) {
       onChange={onChange}
     >
       {label && <span className={cls.label}>{label + '>'}</span>}
-      <div className={cls.listBox}>
-        <HListBox.Button className={cls.trigger}>
-          {/* <Button>{value ?? defaultValue}</Button> */}
-          {value ?? defaultValue}
+
+      <div
+        className={classNames(cls.listBox, mods, [className, popupCls.popup])}
+      >
+        <HListBox.Button as={'div'}>
+          <Button className={cls.trigger}>{value ?? defaultValue}</Button>
         </HListBox.Button>
 
         <HListBox.Options
@@ -79,7 +75,10 @@ export function ListBox(props: ListBoxProps) {
                 <li
                   className={classNames(
                     cls.item,
-                    { [cls.active]: active, [cls.disabled]: item.disabled },
+                    {
+                      [cls.active]: active,
+                      [popupCls.disabled]: item.disabled,
+                    },
                     [],
                   )}
                 >
