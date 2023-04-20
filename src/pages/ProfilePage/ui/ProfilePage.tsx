@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { getAuthUserData } from '@/entities/User';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating/ui/ProfileRating/ProfileRating';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page/Page';
 
@@ -24,7 +23,7 @@ const ProfilePage = (props: ProfilePageProps) => {
   }
 
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page className={className}>
       <VStack max gap="16">
         {userData?.id !== id ? <ProfileRating profileId={id} /> : null}
         <EditableProfileCard id={id} />
