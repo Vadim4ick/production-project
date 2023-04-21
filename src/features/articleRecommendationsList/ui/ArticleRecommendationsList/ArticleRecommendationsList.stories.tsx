@@ -1,22 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
 
+import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { Article } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-
-import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-
-const article: Article = {
-  id: '1',
-  img: 'https://arduinomaster.ru/wp-content/uploads/2018/01/python.jpg',
-  blocks: [],
-  type: [],
-  user: { id: '1', username: '123' },
-  views: 123,
-  createdAt: '',
-  title: '123',
-  subtitle: 'sfsd',
-};
 
 export default {
   title: 'features/ArticleRecommendationsList',
@@ -30,6 +17,18 @@ export default {
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
   <ArticleRecommendationsList {...args} />
 );
+
+const article: Article = {
+  id: '1',
+  img: 'https://arduinomaster.ru/wp-content/uploads/2018/01/python.jpg',
+  blocks: [],
+  type: [],
+  user: { id: '1', username: '123' },
+  views: 123,
+  createdAt: '',
+  title: '123',
+  subtitle: 'sfsd',
+};
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -48,4 +47,3 @@ Normal.parameters = {
     },
   ],
 };
-Normal.parameters = { loki: { skip: true } };

@@ -1,9 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ProfileRating } from './ProfileRating';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: 'shared/ProfileRating',
+  title: 'features/ProfileRating',
   component: ProfileRating,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -16,3 +17,4 @@ const Template: ComponentStory<typeof ProfileRating> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({})];

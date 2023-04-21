@@ -1,12 +1,11 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
-
 import cls from './Flex.module.scss';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end' | 'none';
-export type FlexDirection = 'row' | 'column';
+export type FlexDirection = 'row' | 'column' | 'columnReverse';
 export type FlexGap = '4' | '8' | '16' | '32';
 
 type DivProps = DetailedHTMLProps<
@@ -30,6 +29,7 @@ const justifyClasses: Record<FlexJustify, string> = {
   end: cls.justifyEnd,
   between: cls.justifyBetween,
 };
+
 const alignClasses: Record<FlexAlign, string> = {
   start: cls.alignStart,
   center: cls.alignCenter,
@@ -40,6 +40,7 @@ const alignClasses: Record<FlexAlign, string> = {
 const directionClasses: Record<FlexDirection, string> = {
   row: cls.directionRow,
   column: cls.directionColumn,
+  columnReverse: cls.directionColumnReverse,
 };
 
 const gapClasses: Record<FlexGap, string> = {

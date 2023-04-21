@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux';
 
 import {
   useGetProfileRating,
+  useNotificationsProfile,
   useRateProfile,
 } from '../../api/profileRatingApi';
 
 import { RatingCard } from '@/entities/Rating';
 import { getAuthUserData } from '@/entities/User';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface ProfileRatingProps {
@@ -29,6 +30,7 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
   });
 
   const [rateArticleMutation] = useRateProfile();
+  const [rateNotificationMutation] = useNotificationsProfile();
 
   const handleProfile = useCallback(
     (starsCount: number) => {
@@ -38,9 +40,26 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
           profileId,
           rate: starsCount,
         });
-      } catch (error) {}
+
+        rateNotificationMutation({
+          userId: userData?.id ?? '',
+          description: `Пользователь ${userData?.username} поставил вам ${starsCount} звезд`,
+          title: 'Вам поставили лайк',
+          date: new Date().toISOString(),
+          profileId,
+          href: RoutePath.profile + userData?.id,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     },
-    [profileId, rateArticleMutation, userData?.id],
+    [
+      profileId,
+      rateArticleMutation,
+      rateNotificationMutation,
+      userData?.id,
+      userData?.username,
+    ],
   );
 
   const onAccent = useCallback(

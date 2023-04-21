@@ -122,7 +122,12 @@ ListSmall.args = {
     id: String(index),
   })),
   view: ArticleView.SMALL,
+  virtualized: false,
 };
+
+ListSmall.decorators = [
+  (Store) => <div style={{ display: 'flex', gap: '25px' }}>{Store()}</div>,
+];
 
 export const ListBig = Template.bind({});
 ListBig.args = {
@@ -132,4 +137,5 @@ ListBig.args = {
     id: String(index),
   })),
   view: ArticleView.BIG,
+  virtualized: false,
 };

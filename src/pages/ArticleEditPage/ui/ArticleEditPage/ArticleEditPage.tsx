@@ -1,7 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+import { getAuthUserData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page/Page';
 
@@ -15,6 +17,8 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
 
   const { id } = useParams<{ id: string }>();
   const isEdit = Boolean(id);
+
+  const userData = useSelector(getAuthUserData);
 
   return (
     <Page className={classNames('', {}, [className])}>

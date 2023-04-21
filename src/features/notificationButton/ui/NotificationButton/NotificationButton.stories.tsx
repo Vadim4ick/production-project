@@ -1,9 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { NotificationButton } from './NotificationButton';
 import { Notification } from '@/entities/Notification/model/types/notification';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-
-import { NotificationButton } from './NotificationButton';
 
 export default {
   title: 'features/NotificationButton',
@@ -21,6 +20,7 @@ const notification: Notification = {
   description: 'test body',
   id: '0',
   title: 'test title',
+  date: '14.15.15',
 };
 
 export const Normal = Template.bind({});

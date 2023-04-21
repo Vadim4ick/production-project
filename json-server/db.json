@@ -4,33 +4,61 @@
       "id": "1",
       "title": "Уведомление 1",
       "description": "Произошло какое-то событие",
-      "userId": "1"
+      "date": "2023-04-20T12:00:51.182Z",
+      "userId": "1",
+      "profileId": "1"
     },
     {
       "id": "2",
       "title": "Уведомление 2",
       "description": "Произошло какое-то событие",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "date": "2023-04-20T12:01:10.164Z",
+      "href": "http://localhost:3000/admin",
+      "profileId": "2"
     },
     {
       "id": "3",
       "title": "Уведомление 3",
       "description": "Произошло какое-то событие",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "date": "2023-04-20T12:01:21.895Z",
+      "href": "http://localhost:3000/admin",
+      "profileId": "1"
     },
     {
       "id": "4",
       "title": "Уведомление 4",
+      "date": "2023-04-20T12:01:33.762Z",
       "description": "Произошло какое-то событие",
-      "userId": "1"
+      "userId": "1",
+      "profileId": "1"
     },
     {
       "id": "5",
       "title": "Уведомление 1",
+      "date": "2023-04-20T12:01:45.401Z",
       "description": "Произошло какое-то событие",
-      "userId": "2"
+      "userId": "2",
+      "profileId": "2"
+    },
+    {
+      "userId": "2",
+      "description": "Пользователь user поставил вам 4 звезд",
+      "title": "Вам поставили лайк",
+      "date": "2023-04-21T15:25:33.434Z",
+      "profileId": "1",
+      "href": "/profile/2",
+      "id": "RE54UiM"
+    },
+    {
+      "userId": "1",
+      "description": "Пользователь admin поставил вам 5 звезд",
+      "title": "Вам поставили лайк",
+      "date": "2023-04-21T15:28:47.197Z",
+      "profileId": "2",
+      "href": "/profile/1",
+      "id": "YgvDpVq"
     }
   ],
   "posts": [
@@ -54,9 +82,7 @@
       "views": 1022,
       "createdAt": "26.04.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -126,9 +152,7 @@
       "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -150,9 +174,7 @@
       "views": 94002,
       "createdAt": "26.02.2019",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -174,9 +196,7 @@
       "views": 10222,
       "createdAt": "24.01.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -198,9 +218,7 @@
       "views": 10222,
       "createdAt": "26.02.2020",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -222,9 +240,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -246,9 +262,7 @@
       "views": 100,
       "createdAt": "21.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -270,9 +284,7 @@
       "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -294,9 +306,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -318,9 +328,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -342,9 +350,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -366,9 +372,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -390,9 +394,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -414,9 +416,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -438,9 +438,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -462,9 +460,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -486,9 +482,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -510,9 +504,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "ECONOMIC"
-      ],
+      "type": ["ECONOMIC"],
       "blocks": [
         {
           "id": "1",
@@ -534,9 +526,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -684,27 +674,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://kolchvesti.ru/wp-content/uploads/2021/07/haker.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "avatar": "https://kolchvesti.ru/wp-content/uploads/2021/07/haker.jpg"
     }
   ],
@@ -739,74 +723,20 @@
       "feedback": "Хорошая статья",
       "userId": "1",
       "articleId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Супер статья",
-      "userId": "1",
-      "articleId": "2"
-    },
-    {
-      "userId": "1",
-      "articleId": "3",
-      "rate": 3,
-      "feedback": "",
-      "id": "5uc-oEB"
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 5,
-      "feedback": "",
-      "id": "u2fIV_K"
-    },
-    {
-      "userId": "1",
-      "articleId": "13",
-      "rate": 2,
-      "feedback": "Да, не плохая статья на самом деле",
-      "id": "7Q6nfhw"
-    },
-    {
-      "userId": "1",
-      "articleId": "14",
-      "rate": 5,
-      "feedback": "Не плохая статья",
-      "id": "VUoDMfq"
-    },
-    {
-      "userId": "1",
-      "articleId": "15",
-      "rate": 3,
-      "id": "c-yDQAl"
-    },
-    {
-      "userId": "1",
-      "articleId": "16",
-      "rate": 1,
-      "feedback": "супер",
-      "id": "EjPpKCo"
-    },
-    {
-      "userId": "1",
-      "articleId": "18",
-      "rate": 3,
-      "id": "L-Amiym"
     }
   ],
   "profile-ratings": [
     {
-      "id": "1",
+      "userId": "2",
+      "profileId": "1",
       "rate": 4,
-      "userId": "1",
-      "profileId": "1"
+      "id": 1
     },
     {
       "userId": "1",
       "profileId": "2",
-      "rate": 3,
-      "id": "zwnJfHR"
+      "rate": 5,
+      "id": 2
     }
   ]
 }

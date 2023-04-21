@@ -1,10 +1,12 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
 import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 import cls from './NotificationList.module.scss';
+import { getAuthUserData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
@@ -17,9 +19,14 @@ export const NotificationList = memo((props: NotificationListProps) => {
   const { className } = props;
   const { t } = useTranslation();
 
-  const { data, isLoading } = useNotifications(null, {
-    pollingInterval: 10000,
-  });
+  const userData = useSelector(getAuthUserData);
+
+  const { data, isLoading } = useNotifications(
+    { profileId: userData?.id || '' },
+    {
+      pollingInterval: 10000,
+    },
+  );
 
   if (isLoading) {
     return (

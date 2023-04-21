@@ -12,6 +12,15 @@ interface RateProfileRatingArg {
   rate: number;
 }
 
+interface NotificationsProfileArg {
+  userId: string;
+  title: string;
+  description: string;
+  date: string;
+  profileId: string;
+  href?: string;
+}
+
 const profileRatingApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getProfileRating: build.query<Rating[], GetProfileRatingArg>({
@@ -23,9 +32,18 @@ const profileRatingApi = rtkApi.injectEndpoints({
         },
       }),
     }),
+
     rateProfile: build.mutation<void, RateProfileRatingArg>({
       query: (args) => ({
         url: 'profile-ratings',
+        method: 'POST',
+        body: args,
+      }),
+    }),
+
+    notificationsProfile: build.mutation<void, NotificationsProfileArg>({
+      query: (args) => ({
+        url: 'notifications',
         method: 'POST',
         body: args,
       }),
@@ -35,3 +53,5 @@ const profileRatingApi = rtkApi.injectEndpoints({
 
 export const useGetProfileRating = profileRatingApi.useGetProfileRatingQuery;
 export const useRateProfile = profileRatingApi.useRateProfileMutation;
+export const useNotificationsProfile =
+  profileRatingApi.useNotificationsProfileMutation;

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getAuthUserData } from '@/entities/User';
 import { EditableProfileCard } from '@/features/editableProfileCard';
-import { ProfileRating } from '@/features/profileRating/ui/ProfileRating/ProfileRating';
+import { ProfileRating } from '@/features/profileRating';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page/Page';
 

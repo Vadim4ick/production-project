@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { getCanEditArticle } from '../../model/selectors/article';
+
 import { getArticleDetailsData } from '@/entities/Article';
+import { isUserAdmin, isUserManager } from '@/entities/User';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '@/shared/ui/Button/Button';
 import { HStack } from '@/shared/ui/Stack';
-
-import { getCanEditArticle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -24,6 +25,9 @@ export const ArticleDetailsPageHeader = memo(
 
     const article = useSelector(getArticleDetailsData);
     const canEdit = useSelector(getCanEditArticle);
+
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const onEditArticle = useCallback(() => {
       navigate(`${RoutePath.article_details}${article?.id}/edit`);

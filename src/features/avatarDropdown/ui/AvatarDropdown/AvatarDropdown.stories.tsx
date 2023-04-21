@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-
 import { AvatarDropdown } from './AvatarDropdown';
+import { UserRole } from '@/entities/User';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'features/AvatarDropdown',
@@ -18,4 +18,14 @@ const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({})];
+Normal.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: 'Vadim',
+        roles: [UserRole.ADMIN],
+      },
+    },
+  }),
+];

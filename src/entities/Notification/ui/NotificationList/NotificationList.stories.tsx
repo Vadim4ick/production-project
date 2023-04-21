@@ -21,6 +21,7 @@ const notification: Notification = {
   description: 'test body',
   id: '0',
   title: 'test title',
+  date: '14.15.15',
 };
 
 export const Normal = Template.bind({});
