@@ -1,4 +1,4 @@
-import React, { ForwardedRef, ReactNode, forwardRef, memo } from 'react';
+import React, { ForwardedRef, ReactNode, forwardRef } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
 import { classNames } from '@/shared/lib/classNames/classNames';

@@ -18,9 +18,17 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-vf'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'fsd-vf',
+    'unused-imports',
+  ],
   rules: {
     '@typescript-eslint/naming-convention': 'off',
+    'unused-imports/no-unused-imports': 'error',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
@@ -57,6 +65,7 @@ module.exports = {
         ],
       },
     ],
+
     semi: 'off',
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/member-delimiter-style': 'off',

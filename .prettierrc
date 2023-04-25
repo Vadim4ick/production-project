@@ -8,7 +8,6 @@
     "^../(.*)",
     "^./(.*)"
   ],
-
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

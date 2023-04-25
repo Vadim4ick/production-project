@@ -5,9 +5,9 @@ import cls from './NotificationButton.module.scss';
 import { NotificationList } from '@/entities/Notification';
 import NotificationSvg from '@/shared/assets/icons/bell.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '@/shared/ui/Button/Button';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Icon } from '@/shared/ui/Icon';
 import { Popover } from '@/shared/ui/Popups';
 
 interface NotificationButtonProps {

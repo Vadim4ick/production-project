@@ -11,7 +11,7 @@ import {
 import { RatingCard } from '@/entities/Rating';
 import { getAuthUserData } from '@/entities/User';
 import { RoutePath } from '@/shared/const/router';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ProfileRatingProps {
   className?: string;

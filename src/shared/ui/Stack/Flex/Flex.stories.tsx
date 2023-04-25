@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { storiesOf } from '@storybook/react';
 
 import { Flex } from './Flex';
 
