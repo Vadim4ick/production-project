@@ -19,6 +19,7 @@ interface NotificationsProfileArg {
   date: string;
   profileId: string;
   href?: string;
+  isRead?: boolean;
 }
 
 const profileRatingApi = rtkApi.injectEndpoints({

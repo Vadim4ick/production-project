@@ -1,32 +1,43 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 
-import { useNotifications } from '../../api/notificationApi';
+import { Notification } from '../../model/types/notification';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 import cls from './NotificationList.module.scss';
-import { getAuthUserData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 interface NotificationListProps {
   className?: string;
+  isLoading?: boolean;
+  notifications?: Notification[];
+  handleNotification: (notificationId: string) => void;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-  const { className } = props;
+  const { className, handleNotification, notifications, isLoading } = props;
   const { t } = useTranslation();
 
-  const userData = useSelector(getAuthUserData);
+  if (notifications?.length === 0) {
+    return (
+      <div style={{ minWidth: '200px' }}>
+        <Text text={t('Not found')} />
+      </div>
+    );
+  }
 
-  const { data, isLoading } = useNotifications(
-    { profileId: userData?.id || '' },
-    {
-      pollingInterval: 10000,
-    },
-  );
+  // const userData = useSelector(getAuthUserData);
+
+  // const { data, isLoading, refetch } = useNotifications(
+  //   { profileId: userData?.id || '' },
+  //   {
+  //     pollingInterval: 10000,
+  //     refetchOnMountOrArgChange: true,
+  //   },
+  // );
 
   if (isLoading) {
     return (
@@ -46,8 +57,12 @@ export const NotificationList = memo((props: NotificationListProps) => {
       gap="16"
       className={classNames(cls.notificationList, {}, [className])}
     >
-      {data?.map((item) => (
-        <NotificationItem key={item.id} item={item} />
+      {notifications?.map((item) => (
+        <NotificationItem
+          onRead={handleNotification}
+          key={item.id}
+          item={item}
+        />
       ))}
     </VStack>
   );

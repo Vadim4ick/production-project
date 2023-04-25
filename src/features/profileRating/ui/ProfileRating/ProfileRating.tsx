@@ -47,6 +47,7 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
           title: 'Вам поставили лайк',
           date: new Date().toISOString(),
           profileId,
+          isRead: false,
           href: RoutePath.profile + userData?.id,
         });
       } catch (error) {
