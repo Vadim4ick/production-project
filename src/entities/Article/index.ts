@@ -1,3 +1,5 @@
+export { ArticleBlockType } from './model/consts/articleConsts';
+
 export {
   ArticleType,
   ArticleSortField,

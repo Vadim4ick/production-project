@@ -18,14 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-    'react-hooks',
-    'vadim-firulyov-plugin',
-    // 'ulbi-tv-plugin',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-vf'],
   rules: {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
@@ -74,8 +67,26 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
     'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
     'react/display-name': 'off',
-    'vadim-firulyov-plugin/path-checker': 'error',
-    // 'ulbi-tv-plugin/path-checker': 'error',
+    'fsd-vf/path-checker': ['error', { alias: '@' }],
+    'fsd-vf/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
+
+    'fsd-vf/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.story.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

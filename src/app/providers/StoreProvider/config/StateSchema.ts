@@ -7,7 +7,7 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
-import { ArticleDetailsSchema } from '@/entities/Article/model/types/articleDetailsSchema';
+import { ArticleDetailsSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';

@@ -1,5 +1,6 @@
 import { getLoginPassword } from './getLoginPassword';
-import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
+import { StateSchema } from '@/app/providers/StoreProvider';
+
 describe('getLoginPassword.test', () => {
   test('should return value', () => {
     const state: DeepPartial<StateSchema> = {

@@ -1,6 +1,5 @@
-import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
-
 import { getScrollRestorationByPath } from './scrollRestoration';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getScrollRestorationByPath selector', () => {
   const state: DeepPartial<StateSchema> = {

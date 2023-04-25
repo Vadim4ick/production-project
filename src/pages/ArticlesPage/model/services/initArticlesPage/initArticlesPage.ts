@@ -1,12 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
-
 import { getArticlesPageInited } from '../../selectors/articlesPageSelectors';
 import { articlesPageActions } from '../../slice/articlesPageSlice';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
-import { SortOrder } from './../../../../../shared/types/index';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 
 interface IActionMap<T> {
   [key: string]: (payload: T) => any;

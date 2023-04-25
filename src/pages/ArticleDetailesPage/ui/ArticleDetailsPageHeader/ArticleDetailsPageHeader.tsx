@@ -7,7 +7,7 @@ import { getCanEditArticle } from '../../model/selectors/article';
 
 import { getArticleDetailsData } from '@/entities/Article';
 import { isUserAdmin, isUserManager } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '@/shared/ui/Button/Button';
 import { HStack } from '@/shared/ui/Stack';

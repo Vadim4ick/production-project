@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { NotificationButton } from './NotificationButton';
-import { Notification } from '@/entities/Notification/model/types/notification';
+import { Notification } from '@/entities/Notification';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {

@@ -2,11 +2,6 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { ArticleList } from '@/entities/Article';
-import { scrollRestorationActions } from '@/features/ScrollRestoration';
-import { getScrollIndex } from '@/features/ScrollRestoration/model/selectors/scrollRestoration';
-import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text';
-
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
@@ -14,6 +9,11 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
+
+import { ArticleList } from '@/entities/Article';
+import { scrollRestorationActions } from '@/features/ScrollRestoration';
+import { getScrollIndex } from '@/features/ScrollRestoration';
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text';
 
 interface ArticleInfiniteListProps {
   className?: string;

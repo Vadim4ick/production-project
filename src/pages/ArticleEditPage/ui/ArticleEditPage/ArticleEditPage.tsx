@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { getAuthUserData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 
 interface ArticleEditPageProps {
   className?: string;

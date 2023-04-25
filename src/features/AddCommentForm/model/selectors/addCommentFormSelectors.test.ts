@@ -1,9 +1,8 @@
-import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
-
 import {
   getAddCommentFormError,
   getAddCommentFormText,
 } from './addCommentFormSelectors';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('ArticleDetails', () => {
   test('should return text', () => {

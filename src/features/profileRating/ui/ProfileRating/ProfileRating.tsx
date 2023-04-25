@@ -10,7 +10,7 @@ import {
 
 import { RatingCard } from '@/entities/Rating';
 import { getAuthUserData } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface ProfileRatingProps {

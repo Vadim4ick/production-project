@@ -1,3 +1,4 @@
+/* eslint-disable fsd-vf/layer-imports */
 import { Story } from '@storybook/react';
 
 import '@/app/styles/index.scss';
