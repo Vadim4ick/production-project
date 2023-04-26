@@ -10,7 +10,7 @@ import {
 
 import { RatingCard } from '@/entities/Rating';
 import { getAuthUserData } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ProfileRatingProps {
@@ -48,7 +48,7 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
           date: new Date().toISOString(),
           profileId,
           isRead: false,
-          href: RoutePath.profile + userData?.id,
+          href: getRouteProfile(userData?.id as string),
         });
       } catch (error) {
         console.log(error);

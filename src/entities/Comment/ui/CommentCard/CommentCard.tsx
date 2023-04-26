@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { Comment } from '../../model/types/comment';
 
 import cls from './CommentCard.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -46,10 +46,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
       gap="8"
       className={classNames(cls.commentCard, {}, [className])}
     >
-      <AppLink
-        to={`${RoutePath.profile}${comment.user.id}`}
-        className={cls.header}
-      >
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar ? (
           <Avatar src={comment.user.avatar} size={30} />
         ) : null}

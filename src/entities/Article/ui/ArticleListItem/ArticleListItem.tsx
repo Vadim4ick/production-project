@@ -10,7 +10,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 import cls from './ArticleListItem.module.scss';
 import EyeIcon from '@/shared/assets/icons/eye2.svg';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppLink } from '@/shared/ui/AppLink';
@@ -77,7 +77,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <AppLink
               onClick={handleButtonClick}
               target={target}
-              to={RoutePath.article_details + article.id}
+              to={getRouteArticleDetails(article.id)}
             >
               <Button theme={ThemeButton.OUTLINE}>{t('read more')}</Button>
             </AppLink>
@@ -92,7 +92,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     <AppLink
       onClick={handleButtonClick}
       target={target}
-      to={RoutePath.article_details + article?.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
     >
       <Card>
