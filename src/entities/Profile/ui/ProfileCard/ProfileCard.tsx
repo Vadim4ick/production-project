@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
-import { ValidateProfileAvatar } from '@/entities/Avatar';
+import { Profile } from '../../model/types/profile';
+
+import cls from './ProfileCard.module.scss';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
@@ -9,10 +11,6 @@ import { Input } from '@/shared/ui/Input';
 import { Loader } from '@/shared/ui/Loader';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-
-import { Profile } from '../../model/types/profile';
-
-import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
   className?: string;
@@ -90,11 +88,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
     >
       {data?.avatar && (
         <div className={cls.avatarWrapper}>
-          {__PROJECT__ !== 'storybook' ? (
-            <ValidateProfileAvatar avatar={data?.avatar} />
-          ) : (
-            <Avatar src={data?.avatar} />
-          )}
+          <Avatar src={data?.avatar} />
         </div>
       )}
 

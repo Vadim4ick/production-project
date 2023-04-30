@@ -13,11 +13,13 @@ import EyeIcon from '@/shared/assets/icons/eye2.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { AppImage } from '@/shared/ui/AppImage';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Card } from '@/shared/ui/Card';
 import { Icon } from '@/shared/ui/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
 
 interface ArticleListItemProps {
@@ -65,7 +67,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
           <Text text={article.title} className={cls.title} />
           {types}
-          <img alt={article.title} src={article.img} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width={'100%'} height={250} />}
+            alt={article.title}
+            src={article.img}
+            className={cls.img}
+          />
           {textBlock && (
             <ArticleTextBlockComponent
               block={textBlock}
@@ -97,9 +104,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card>
         <div className={cls.imageWrapper}>
-          <img alt={article?.title} src={article?.img} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            alt={article.title}
+            src={article.img}
+            className={cls.img}
+          />
 
-          <Text text={article?.createdAt} className={cls.date} />
+          <Text text={article.createdAt} className={cls.date} />
         </div>
 
         <div className={cls.infoWrapper}>
@@ -107,7 +119,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {views}
         </div>
 
-        <Text text={article?.title} className={cls.title} />
+        <Text text={article.title} className={cls.title} />
       </Card>
     </AppLink>
   );
