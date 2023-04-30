@@ -2,7 +2,8 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # echo "Lint TS"
-npm run lint:ts
+# npm run lint:ts
+npx lint-staged
 
 # echo "Lint Styles"
 # npm run lint:scss

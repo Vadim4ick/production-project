@@ -5,7 +5,6 @@ export {
   ArticleSortField,
   ArticleView,
 } from './model/consts/articleConsts';
-
 export { getArticleDetailsData } from './model/selectors/ArticleDetails';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
