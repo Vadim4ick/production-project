@@ -85,10 +85,12 @@
     "husky": "^8.0.0",
     "i": "^0.3.7",
     "identity-obj-proxy": "^3.0.0",
+    "isomorphic-fetch": "^3.0.0",
     "jest": "^29.4.3",
     "jest-environment-jsdom": "^29.4.3",
     "jest-html-reporters": "^3.1.4",
     "json-server": "^0.17.1",
+    "lint-staged": "^13.2.2",
     "loki": "^0.31.0",
     "mini-css-extract-plugin": "^2.5.3",
     "npm": "^9.6.5",
@@ -133,6 +135,9 @@
     "react-router-dom": "^6.2.1",
     "react-virtuoso": "^4.2.0",
     "ts-node-dev": "^2.0.0"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
   },
   "loki": {
     "configurations": {

@@ -15,6 +15,7 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from '@/entities/Profile';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -94,11 +95,20 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     },
     [dispatch],
   );
+  const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
+
   const onChangeAvatar = useCallback(
     (value?: string) => {
+      if (user) {
+        localStorage.setItem(
+          'user',
+          JSON.stringify({ ...JSON.parse(user), avatar: value }),
+        );
+      }
+
       dispatch(profileActions.updateProfile({ avatar: value || '' }));
     },
-    [dispatch],
+    [dispatch, user],
   );
   const onChangeUsername = useCallback(
     (value?: string) => {
