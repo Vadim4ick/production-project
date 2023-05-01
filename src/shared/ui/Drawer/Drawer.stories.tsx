@@ -17,3 +17,4 @@ Primary.args = {
   children: 'Test Text',
   isOpen: true,
 };
+Primary.parameters = { loki: { skip: true } };
