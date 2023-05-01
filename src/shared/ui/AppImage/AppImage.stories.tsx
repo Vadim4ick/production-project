@@ -15,4 +15,6 @@ const Template: ComponentStory<typeof AppImage> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  src: 'https://kolchvesti.ru/wp-content/uploads/2021/07/haker.jpg',
+};

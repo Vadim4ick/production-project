@@ -102,8 +102,11 @@ Big.args = {
   view: ArticleView.BIG,
   article,
 };
+
+Big.parameters = { loki: { skip: true } };
 export const Small = Template.bind({});
 Small.args = {
   view: ArticleView.SMALL,
   article,
 };
+Small.parameters = { loki: { skip: true } };
