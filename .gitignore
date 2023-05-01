@@ -5,4 +5,4 @@ idea
 .loki/report.html
 .loki/report.json
 /html-report
-/reports
+/reports/unit
