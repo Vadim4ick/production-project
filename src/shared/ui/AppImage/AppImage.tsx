@@ -37,14 +37,12 @@ export const AppImage = memo((props: AppImageProps) => {
     };
   }, [src]);
 
-  if (__PROJECT__ !== 'storybook') {
-    if (isLoading && fallback) {
-      return fallback;
-    }
+  if (isLoading && fallback) {
+    return fallback;
+  }
 
-    if (hasError && errorFallback) {
-      return errorFallback;
-    }
+  if (hasError && errorFallback) {
+    return errorFallback;
   }
 
   return <img className={className} src={src} alt={alt} {...otherProps} />;
