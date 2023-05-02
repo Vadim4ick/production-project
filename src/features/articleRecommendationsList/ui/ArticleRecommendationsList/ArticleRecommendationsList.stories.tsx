@@ -17,7 +17,6 @@ export default {
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
   <ArticleRecommendationsList {...args} />
 );
-
 const article: Article = {
   id: '1',
   img: 'https://arduinomaster.ru/wp-content/uploads/2018/01/python.jpg',
