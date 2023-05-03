@@ -42,7 +42,7 @@ Normal.parameters = {
         { ...article, id: '3' },
       ],
     },
-    { loki: { skip: true } },
   ],
+  loki: { skip: true },
 };
 // Normal.parameters = { loki: { skip: true } };

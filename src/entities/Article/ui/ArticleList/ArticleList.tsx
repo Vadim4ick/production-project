@@ -2,15 +2,14 @@ import { HTMLAttributeAnchorTarget, memo, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/Text';
-
 import { ArticleView } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
 import cls from './ArticleList.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextSize } from '@/shared/ui/Text';
 
 interface ArticleListProps {
   className?: string;
@@ -129,6 +128,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       {virtualized ? (
         view === ArticleView.BIG ? (
           <div
+            data-testid="ArticlesPage"
             className={classNames(cls.articleList, {}, [className, cls[view]])}
           >
             <Virtuoso
@@ -141,6 +141,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           </div>
         ) : (
           <div
+            data-testid="ArticlesPage"
             className={classNames(cls.articleList, {}, [className, cls[view]])}
           >
             <VirtuosoGrid
