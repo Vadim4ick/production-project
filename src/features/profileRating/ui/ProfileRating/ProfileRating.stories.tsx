@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 
 import { ProfileRating } from './ProfileRating';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
@@ -10,7 +9,6 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [withMock],
 } as ComponentMeta<typeof ProfileRating>;
 
 const Template: ComponentStory<typeof ProfileRating> = (args) => (
@@ -23,9 +21,10 @@ Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
   mockData: [
     {
-      url: __API__ + '/profile-ratings?userId=2',
+      url: __API__ + '/profile-ratings?userId=1',
       method: 'GET',
       status: 200,
+      response: [{ rate: 4 }],
     },
   ],
 };

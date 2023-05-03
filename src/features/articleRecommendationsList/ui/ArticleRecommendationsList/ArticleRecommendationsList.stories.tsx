@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { Article } from '@/entities/Article';
@@ -11,7 +10,6 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [withMock],
 } as ComponentMeta<typeof ArticleRecommendationsList>;
 
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
@@ -35,7 +33,7 @@ Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
   mockData: [
     {
-      url: __API__ + '/articles?_limit=4',
+      url: __API__ + '/articles?_limit=3',
       method: 'GET',
       status: 200,
       response: [
@@ -44,6 +42,7 @@ Normal.parameters = {
         { ...article, id: '3' },
       ],
     },
+    { loki: { skip: true } },
   ],
 };
-Normal.parameters = { loki: { skip: true } };
+// Normal.parameters = { loki: { skip: true } };

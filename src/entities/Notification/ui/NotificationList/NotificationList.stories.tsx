@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 
 import { Notification } from '../../model/types/notification';
 
@@ -12,7 +11,6 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [withMock],
 } as ComponentMeta<typeof NotificationList>;
 
 const Template: ComponentStory<typeof NotificationList> = (args) => (
@@ -27,19 +25,11 @@ const notification: Notification = {
 };
 
 export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({})];
-Normal.parameters = {
-  mockData: [
-    {
-      url: __API__ + '/notifications?profileId=1&_sort=date&_order=desc',
-      method: 'GET',
-      status: 200,
-      response: [
-        { ...notification, id: '1' },
-        { ...notification, id: '2' },
-        { ...notification, id: '3' },
-      ],
-    },
+Normal.args = {
+  notifications: [
+    { ...notification, id: '1' },
+    { ...notification, id: '2' },
+    { ...notification, id: '3' },
   ],
 };
+Normal.decorators = [StoreDecorator({})];
