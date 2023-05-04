@@ -1,12 +1,12 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
+
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text';
-
-import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
   className?: string;
@@ -32,7 +32,11 @@ export const ArticleRecommendationsList = memo(
       <>
         <Text size={TextSize.L} title={t('we-recommend')} />
 
-        <HStack gap={'32'} className={classNames('', {}, [className])}>
+        <HStack
+          data-testid="ArticleRecommendationsList"
+          gap={'32'}
+          className={classNames('', {}, [className])}
+        >
           <ArticleList
             virtualized={false}
             target="_blank"

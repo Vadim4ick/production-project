@@ -59,6 +59,7 @@ export const Flex = (props: FlexProps) => {
     direction = 'row',
     gap,
     max,
+    ...otherProps
   } = props;
 
   const classes = [
@@ -73,5 +74,9 @@ export const Flex = (props: FlexProps) => {
     [cls.max]: max,
   };
 
-  return <div className={classNames(cls.flex, mods, classes)}>{children}</div>;
+  return (
+    <div {...otherProps} className={classNames(cls.flex, mods, classes)}>
+      {children}
+    </div>
+  );
 };
