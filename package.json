@@ -72,7 +72,7 @@
     "cypress": "^12.11.0",
     "eslint": "^8.34.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
-    "eslint-plugin-fsd-vf": "^2.0.12",
+    "eslint-plugin-fsd-vf": "^2.0.13",
     "eslint-plugin-i18next": "^5.1.2",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
