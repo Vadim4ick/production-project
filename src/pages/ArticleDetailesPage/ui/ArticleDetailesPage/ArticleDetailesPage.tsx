@@ -15,6 +15,8 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 
@@ -28,7 +30,7 @@ const reducers: ReducersList = {
 
 const ArticleDetailesPage: FC<ArticleDetailesPageProps> = (props) => {
   const { className } = props;
-  const { t } = useTranslation('article');
+  const { t } = useTranslation('');
 
   const { id } = useParams<{ id: string }>();
 
@@ -36,13 +38,19 @@ const ArticleDetailesPage: FC<ArticleDetailesPageProps> = (props) => {
     return null;
   }
 
+  const articleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('article-rating-coming-soon')}</Card>,
+  });
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailesPage, {}, [className])}>
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {articleRatingCard}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

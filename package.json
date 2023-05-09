@@ -142,6 +142,7 @@
     "**/*.{ts,tsx}": "eslint"
   },
   "loki": {
+    "fetchFailIgnore": "^http(.*)$",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
