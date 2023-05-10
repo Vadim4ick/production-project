@@ -8,6 +8,7 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -45,6 +46,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <ArticleInfiniteList onLoadNextPart={onLoadNextPart} />
+      <ArticlePageGreeting />
     </DynamicModuleLoader>
   );
 };
