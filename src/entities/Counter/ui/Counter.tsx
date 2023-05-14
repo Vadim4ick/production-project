@@ -2,7 +2,7 @@
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { useCounterActions } from '../model/slice/counterSlice';
 
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
 
 export const Counter = () => {
   const counterValue = useCounterValue();

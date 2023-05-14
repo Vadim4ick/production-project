@@ -1,24 +1,26 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
-import cls from './LoginForm.module.scss';
-import Eye from '@/shared/assets/icons/eye.svg';
 import { useSelector } from 'react-redux';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import { loginByUsername } from '../../model/servies/loginByUsername/loginByUsername';
-import { Text, TextTheme } from '@/shared/ui/Text';
-import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
-import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { loginByUsername } from '../../model/servies/loginByUsername/loginByUsername';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+
+import cls from './LoginForm.module.scss';
+import Eye from '@/shared/assets/icons/eye.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button, ThemeButton } from '@/shared/ui/deprecated/Button';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 
 export interface LoginFormProps {
   className?: string;

@@ -5,10 +5,10 @@ import { Notification } from '../../model/types/notification';
 import cls from './NotificationItem.module.scss';
 import IconCancel from '@/shared/assets/icons/cancel.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button';
-import { Card, CardTheme } from '@/shared/ui/Card';
-import { Icon } from '@/shared/ui/Icon';
-import { Text } from '@/shared/ui/Text';
+import { Button, ButtonSize, ThemeButton } from '@/shared/ui/deprecated/Button';
+import { Card, CardTheme } from '@/shared/ui/deprecated/Card';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface NotificationItemProps {
   className?: string;

@@ -14,7 +14,12 @@ import cls from './ArticleInfiniteList.module.scss';
 import { ArticleList } from '@/entities/Article';
 import { scrollRestorationActions } from '@/features/ScrollRestoration';
 import { getScrollIndex } from '@/features/ScrollRestoration';
-import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
+import {
+  Text,
+  TextAlign,
+  TextSize,
+  TextTheme,
+} from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
   className?: string;

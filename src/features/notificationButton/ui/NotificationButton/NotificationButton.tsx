@@ -12,11 +12,11 @@ import { NotificationList } from '@/entities/Notification';
 import { getAuthUserData } from '@/entities/User';
 import NotificationSvg from '@/shared/assets/icons/bell.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Icon } from '@/shared/ui/Icon';
-import { Popover } from '@/shared/ui/Popups';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Button, ThemeButton } from '@/shared/ui/deprecated/Button';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Popover } from '@/shared/ui/deprecated/Popups';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 
 interface NotificationButtonProps {
   className?: string;

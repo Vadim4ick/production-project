@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -48,6 +47,7 @@ const App = () => {
               content={<AppRouter />}
               header={<Navbar />}
               sidebar={<Sidebar />}
+              toolbar={<div>123</div>}
             />
           </Suspense>
         </div>

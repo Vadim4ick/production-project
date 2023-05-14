@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Avatar } from '@/shared/ui/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 
 export interface ValidateProfileAvatarProps {
   className?: string;
