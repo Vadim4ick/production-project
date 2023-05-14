@@ -8,6 +8,8 @@ import cls from './Sidebar.module.scss';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppLogo } from '@/shared/ui/AppLogo';
 import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button';
 import { VStack } from '@/shared/ui/Stack';
 
@@ -32,31 +34,48 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
   }, [collapsed, sidebarItemsList]);
 
   return (
-    <aside
-      data-testid="sidebar"
-      className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-        className as string,
-      ])}
-    >
-      <Button
-        data-testid="sidebar-toggle"
-        onClick={onToggle}
-        className={cls.collapseBtn}
-        theme={ThemeButton.BACKGROUND_INVERTED}
-        square
-        size={ButtonSize.L}
-      >
-        {collapsed ? '>' : '<'}
-      </Button>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      off={
+        <aside
+          data-testid="sidebar"
+          className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+            className as string,
+          ])}
+        >
+          <Button
+            data-testid="sidebar-toggle"
+            onClick={onToggle}
+            className={cls.collapseBtn}
+            theme={ThemeButton.BACKGROUND_INVERTED}
+            square
+            size={ButtonSize.L}
+          >
+            {collapsed ? '>' : '<'}
+          </Button>
 
-      <VStack role="navigation" gap="8" className={cls.items}>
-        {itemsList}
-      </VStack>
+          <VStack role="navigation" gap="8" className={cls.items}>
+            {itemsList}
+          </VStack>
 
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher short={collapsed} />
-      </div>
-    </aside>
+          <div className={cls.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher short={collapsed} />
+          </div>
+        </aside>
+      }
+      on={
+        <aside
+          data-testid="sidebar"
+          className={classNames(
+            cls.sidebarRedesigned,
+            { [cls.collapsed]: collapsed },
+            [className as string],
+          )}
+        >
+          <AppLogo className={cls.appLogo} />
+        </aside>
+      }
+    />
   );
 });

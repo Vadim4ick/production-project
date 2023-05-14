@@ -10,6 +10,7 @@ import {
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 
+import cls from './ArticleInfiniteList.module.scss';
 import { ArticleList } from '@/entities/Article';
 import { scrollRestorationActions } from '@/features/ScrollRestoration';
 import { getScrollIndex } from '@/features/ScrollRestoration';
@@ -52,7 +53,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
       view={view}
       articles={articles}
       virtualized={true}
-      ArticlesPageFilter={<ArticlesPageFilter />}
+      ArticlesPageFilter={<ArticlesPageFilter className={cls.marginRight} />}
       setScrollIdx={scrollRestorationActions.setScrollIndex}
     />
   );

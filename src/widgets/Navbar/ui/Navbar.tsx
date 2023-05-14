@@ -9,6 +9,7 @@ import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { getRouteArticlesCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
@@ -31,25 +32,42 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(cls.navbar, {}, [className as string])}>
-        <Text
-          theme={TextTheme.INVERTED}
-          className={cls.appName}
-          title={t('news')}
-        />
-        <AppLink
-          className={cls.createBtn}
-          theme={AppLinkTheme.SECONDARY}
-          to={getRouteArticlesCreate()}
-        >
-          {t('create-an-article')}
-        </AppLink>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        off={
+          <header className={classNames(cls.navbar, {}, [className as string])}>
+            <Text
+              theme={TextTheme.INVERTED}
+              className={cls.appName}
+              title={t('news')}
+            />
+            <AppLink
+              className={cls.createBtn}
+              theme={AppLinkTheme.SECONDARY}
+              to={getRouteArticlesCreate()}
+            >
+              {t('create-an-article')}
+            </AppLink>
 
-        <HStack gap="16" className={cls.actions}>
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </header>
+            <HStack gap="16" className={cls.actions}>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+        on={
+          <header
+            className={classNames(cls.navbarRedesigned, {}, [
+              className as string,
+            ])}
+          >
+            <HStack gap="16" className={cls.actions}>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+      />
     );
   }
 

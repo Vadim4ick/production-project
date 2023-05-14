@@ -1,9 +1,12 @@
+/* eslint-disable i18next/no-literal-string */
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AppRouter } from './providers/router';
 import { getUserInited, initAuthData } from '@/entities/User';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
@@ -25,16 +28,31 @@ const App = () => {
   }
 
   return (
-    <div className={classNames(`app`, {}, [theme])}>
-      <Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-
-          {inited && <AppRouter />}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      off={
+        <div className={classNames(`app`, {}, [theme])}>
+          <Suspense fallback="">
+            <Navbar />
+            <div className="content-page">
+              <Sidebar />
+              <AppRouter />
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      on={
+        <div className={classNames(`app_redesigned`, {}, [theme])}>
+          <Suspense fallback="">
+            <MainLayout
+              content={<AppRouter />}
+              header={<Navbar />}
+              sidebar={<Sidebar />}
+            />
+          </Suspense>
+        </div>
+      }
+    />
   );
 };
 
