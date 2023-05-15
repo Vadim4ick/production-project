@@ -1,32 +1,35 @@
 import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 
-import { Button } from '../../../Button/Button';
+import { Button } from '../../../Button';
+import { Icon } from '../../../Icon';
 import { mapDirectionClass } from '../../styles/consts';
 
 import popupCls from './../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { DropdownDirection } from '@/shared/types/ui';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
   value: string;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
-  items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+  items?: ListBoxItem<T>[];
   className?: string;
-  value?: string;
-  defaultValue?: string;
-  onChange: <T extends string>(value: T) => void;
+  value?: T;
+  defaultValue?: T;
+  onChange: (value: T) => void;
   readonly?: boolean;
   label?: string;
   direction?: DropdownDirection;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
   const {
     className,
     items,
@@ -44,6 +47,10 @@ export function ListBox(props: ListBoxProps) {
     [cls.readonly]: readonly,
   };
 
+  const selectedItem = useMemo(() => {
+    return items?.find((item) => item.value === value);
+  }, [items, value]);
+
   return (
     <HListBox
       disabled={readonly}
@@ -57,9 +64,23 @@ export function ListBox(props: ListBoxProps) {
       <div
         className={classNames(cls.listBox, mods, [className, popupCls.popup])}
       >
-        <HListBox.Button as={'div'}>
-          <Button className={cls.trigger}>{value ?? defaultValue}</Button>
-        </HListBox.Button>
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          off={
+            <HListBox.Button as={'div'}>
+              <Button className={cls.trigger}>
+                {selectedItem?.content ?? defaultValue}
+              </Button>
+            </HListBox.Button>
+          }
+          on={
+            <HListBox.Button as={'div'}>
+              <Button variant="filled" addonRight={<Icon Svg={ArrowIcon} />}>
+                {selectedItem?.content ?? defaultValue}
+              </Button>
+            </HListBox.Button>
+          }
+        />
 
         <HListBox.Options
           className={classNames(cls.options, {}, optionsClasses)}
@@ -78,11 +99,12 @@ export function ListBox(props: ListBoxProps) {
                     {
                       [cls.active]: active,
                       [popupCls.disabled]: item.disabled,
+                      [popupCls.selected]: selected,
                     },
                     [],
                   )}
                 >
-                  {selected && '!!!'}
+                  {selected}
                   {item.content}
                 </li>
               )}

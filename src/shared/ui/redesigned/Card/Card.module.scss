@@ -1,6 +1,5 @@
 .card {
   padding: 24px;
-  border-radius: 12px;
 }
 
 .withoutPaddings {
@@ -12,11 +11,19 @@
 }
 
 .outlined {
-  background: 1px solid var(--accent-redesigned);
+  background: var(--accent-redesigned);
 }
 
 .light {
-  background: 1px solid var(--light-bg-redesigned);
+  background: var(--light-bg-redesigned);
+}
+
+.default {
+  border-radius: 12px;
+}
+
+.round {
+  border-radius: 42px;
 }
 
 .max {
