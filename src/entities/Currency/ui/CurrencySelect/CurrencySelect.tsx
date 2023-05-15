@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import { Currency } from '../../model/types/currency';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface CurrencySelectProps {
   className?: string;
@@ -31,27 +32,22 @@ export const CurrencySelect: React.FC<CurrencySelectProps> = memo((props) => {
     [onChange],
   );
 
+  const propsBox = {
+    defaultValue: t('Укажите валюту'),
+    items: options,
+    label: t('Укажите валюту'),
+    value: value,
+    className,
+    onChange: onChangeHandler,
+    readonly,
+    direction: 'top right' as const,
+  };
+
   return (
-    <ListBox
-      defaultValue={t('Укажите валюту')}
-      items={options}
-      label={t('Укажите валюту')}
-      value={value}
-      className={classNames('', {}, [className])}
-      onChange={onChangeHandler}
-      readonly={readonly}
-      direction={'top right'}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      off={<ListBoxDeprecated {...propsBox} />}
+      on={<ListBox {...propsBox} />}
     />
   );
-
-  // return (
-  //   <Select
-  //     className={classNames('', {}, [className])}
-  //     label={t('Укажите валюту')}
-  //     options={options}
-  //     value={value}
-  //     onChange={onChangeHandler}
-  //     readonly={readonly}
-  //   />
-  // );
 });
