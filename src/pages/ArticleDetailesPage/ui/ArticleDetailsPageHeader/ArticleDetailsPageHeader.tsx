@@ -9,7 +9,7 @@ import { getArticleDetailsData } from '@/entities/Article';
 import { getRouteArticles, getRouteArticlesEdit } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;

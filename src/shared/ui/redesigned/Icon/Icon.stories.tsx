@@ -4,7 +4,7 @@ import { Icon } from './Icon';
 import Avatar from '@/shared/assets/icons/about.svg';
 
 export default {
-  title: 'shared/Icon',
+  title: 'shared/redesigned/Icon',
   component: Icon,
   argTypes: {
     backgroundColor: { control: 'color' },

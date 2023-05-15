@@ -5,8 +5,8 @@ import { useArticleRecommendationsList } from '../../api/articleRecommendationsA
 
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleRecommendationsListProps {
   className?: string;
