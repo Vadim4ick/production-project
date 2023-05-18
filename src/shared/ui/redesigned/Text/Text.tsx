@@ -16,6 +16,7 @@ interface TextProps {
   variant?: TextVariant;
   align?: TextAlign;
   size?: TextSize;
+  bold?: boolean;
 
   'data-testid'?: string;
 }
@@ -41,6 +42,7 @@ export const Text: React.FC<TextProps> = memo((props) => {
     variant = 'primary',
     align = 'left',
     size = 'm',
+    bold,
     'data-testid': dataTestId = 'Text',
   } = props;
 
@@ -49,7 +51,7 @@ export const Text: React.FC<TextProps> = memo((props) => {
 
   return (
     <div
-      className={classNames(cls.text, {}, [
+      className={classNames(cls.text, { [cls.bold]: bold }, [
         className as string,
         cls[variant],
         cls[align],

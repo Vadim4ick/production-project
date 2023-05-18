@@ -56,6 +56,13 @@
   }
 }
 
+.bold {
+  .title,
+  .text {
+    font-weight: 700;
+  }
+}
+
 .left {
   text-align: left;
 }

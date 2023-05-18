@@ -115,9 +115,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
           view={view}
           target={target}
           key={`str${index}`}
-          index={index}
+          // index={index}
           className={cls.card}
-          setScrollIdx={(setScrollIdx && setScrollIdx(index)) ?? undefined}
+          // setScrollIdx={(setScrollIdx && setScrollIdx(index)) ?? undefined}
         />
       </div>
     );

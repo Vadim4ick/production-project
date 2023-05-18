@@ -101,3 +101,31 @@
     text-overflow: ellipsis;
   }
 }
+
+.ArticleListItemRedesigned {
+  &.BIG {
+    width: 100%;
+
+    .card {
+      margin-bottom: 20px;
+    }
+  }
+
+  &.SMALL {
+    width: 240px;
+    height: 350px;
+
+    .card {
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .footer {
+        padding: 8px 8px 16px;
+        height: 146px;
+      }
+    }
+  }
+}

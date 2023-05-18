@@ -38,7 +38,7 @@ export const ArticleRecommendationsList = memo(
           className={classNames('', {}, [className])}
         >
           <ArticleList
-            virtualized={false}
+            // virtualized={false}
             target="_blank"
             articles={articles}
           />

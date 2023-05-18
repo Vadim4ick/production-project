@@ -1,21 +1,31 @@
-.BIG {
-  .card {
-    margin-bottom: 30px;
+.ArticleList {
+  &.BIG {
+    .card {
+      margin-bottom: 30px;
+    }
+  }
+
+  &.SMALL {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    row-gap: 15px;
+
+    .card {
+      display: inline-flex;
+      height: 300px;
+    }
+
+    .row {
+      display: flex;
+      gap: 30px;
+    }
   }
 }
 
-.SMALL {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  row-gap: 15px;
-
-  .card {
-    display: inline-flex;
-    height: 300px;
-  }
-
-  .row {
-    display: flex;
-    gap: 30px;
+.ArticleListRedesigned {
+  &.SMALL {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    row-gap: 15px;
   }
 }

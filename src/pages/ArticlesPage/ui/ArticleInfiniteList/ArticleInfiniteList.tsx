@@ -8,11 +8,11 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slice/articlesPageSlice';
-import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 
-import cls from './ArticleInfiniteList.module.scss';
+// import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
+// import cls from './ArticleInfiniteList.module.scss';
 import { ArticleList } from '@/entities/Article';
-import { scrollRestorationActions } from '@/features/ScrollRestoration';
+// import { scrollRestorationActions } from '@/features/ScrollRestoration';
 import { getScrollIndex } from '@/features/ScrollRestoration';
 import {
   Text,
@@ -53,13 +53,13 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     <ArticleList
       className={className}
       isLoading={isLoading}
-      onLoadNextPart={onLoadNextPart}
-      scrollIdx={scrollIdx}
+      // onLoadNextPart={onLoadNextPart}
+      // scrollIdx={scrollIdx}
       view={view}
       articles={articles}
-      virtualized={true}
-      ArticlesPageFilter={<ArticlesPageFilter className={cls.marginRight} />}
-      setScrollIdx={scrollRestorationActions.setScrollIndex}
+      // virtualized={true}
+      // ArticlesPageFilter={<ArticlesPageFilter className={cls.marginRight} />}
+      // setScrollIdx={scrollRestorationActions.setScrollIndex}
     />
   );
 });

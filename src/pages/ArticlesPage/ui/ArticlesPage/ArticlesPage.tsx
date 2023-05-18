@@ -5,6 +5,7 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 
@@ -51,6 +52,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
           onScrollEnd={onLoadNextPart}
           className={classNames(cls.ArticlesPage, {}, [className])}
         >
+          <ArticlesPageFilter />
           <ArticleInfiniteList className={cls.list} />
           <ArticlePageGreeting />
         </Page>
