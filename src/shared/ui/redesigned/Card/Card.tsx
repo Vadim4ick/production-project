@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
 export type CardPadding = '0' | '8' | '16' | '24';
-export type CardBorder = 'round' | 'default';
+export type CardBorder = 'round' | 'default' | 'partial';
 
 const mapPaddingToClass: Record<CardPadding, string> = {
   0: 'gap_0',

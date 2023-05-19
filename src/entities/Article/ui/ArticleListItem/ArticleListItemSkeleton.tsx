@@ -128,7 +128,7 @@ export const ArticleListItemSkeleton = memo(
         }
         on={
           <div className={classNames(mainClass, {}, [className, cls[view]])}>
-            <Card border="round" className={cls.card}>
+            <Card border="partial" className={cls.card}>
               <Skeleton width={'100%'} height={140} />
 
               <VStack gap="16" className={cls.footer} justify="between">

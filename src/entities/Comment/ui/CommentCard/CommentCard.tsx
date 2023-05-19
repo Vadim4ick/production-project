@@ -79,7 +79,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         </VStack>
       }
       on={
-        <Card padding="24" border="round" max>
+        <Card padding="24" border="partial" max>
           <VStack
             data-testid="CommentCard.Content"
             max

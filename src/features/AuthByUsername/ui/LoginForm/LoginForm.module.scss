@@ -1,4 +1,5 @@
-.loginForm {
+.loginForm,
+.loginFormRedesign {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -25,4 +26,16 @@
   align-items: center;
   justify-content: center;
   fill: var(--primary-color);
+}
+
+.loginFormRedesign {
+  .icon {
+    top: 50%;
+    transform: translateY(-25%);
+    right: 10px;
+  }
+
+  .inpPass {
+    width: 100%;
+  }
 }
