@@ -9,12 +9,12 @@ import { CurrencySelect } from '@/entities/Currency';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
-import { Loader } from '@/shared/ui/deprecated/Loader';
 import {
   TextAlign,
   Text as TextDeprecated,
   TextTheme,
 } from '@/shared/ui/deprecated/Text';
+import { Loader } from '@/shared/ui/redesigned/Loader';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 export const ProfileCardDeprecatedError = () => {

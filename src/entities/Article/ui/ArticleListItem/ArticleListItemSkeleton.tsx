@@ -141,7 +141,7 @@ export const ArticleListItemSkeleton = memo(
                   </HStack>
                 </VStack>
               </VStack>
-              <HStack gap="4">
+              <HStack gap="4" className={cls.avatar}>
                 <Skeleton border="100%" width={32} height={32} />
                 <Skeleton width={47} height={24} />
               </HStack>

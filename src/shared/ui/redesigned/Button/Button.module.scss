@@ -6,7 +6,7 @@
 .button {
   cursor: pointer;
   color: var(--text-redesigned);
-  padding: 8px 16px;
+  padding: 6px 16px;
   transition: opacity 0.3s ease 0s;
   display: flex;
   align-items: center;
@@ -46,11 +46,12 @@
 
 .outline {
   background: none;
-  border: 1px solid var(--icon-redesigned);
+  border: 2px solid var(--icon-redesigned);
   border-radius: 34px;
+  transition: all 0.3s ease 0s;
 
   &:hover {
-    border: 1px solid var(--accent-redesigned);
+    border: 2px solid var(--accent-redesigned);
   }
 }
 

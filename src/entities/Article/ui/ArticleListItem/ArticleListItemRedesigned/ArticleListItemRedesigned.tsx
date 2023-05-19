@@ -31,7 +31,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
   const userInfo = (
     <>
-      <Avatar size={32} src={article.user.avatar} />
+      <Avatar size={32} src={article.user.avatar} className={cls.avatar} />
       <Text bold text={article.user.username} />
     </>
   );
@@ -50,7 +50,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
     return (
       <Card
-        padding="24"
+        padding="0"
         max
         data-testid="ArticleListItem"
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
@@ -99,7 +99,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     >
       <Card className={cls.card} border="round">
         <AppImage
-          fallback={<Skeleton width={200} height={200} />}
+          fallback={<Skeleton width={'100%'} height={200} />}
           alt={article.title}
           src={article.img}
           className={cls.img}

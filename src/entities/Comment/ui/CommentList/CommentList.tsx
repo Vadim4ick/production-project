@@ -5,8 +5,10 @@ import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface CommentListProps {
   className?: string;
@@ -36,7 +38,11 @@ export const CommentList = memo((props: CommentListProps) => {
           <CommentCard key={i} comment={comment} isLoading={isLoading} />
         ))
       ) : (
-        <Text text={t('There is no comment')} />
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          off={<TextDeprecated text={t('There is no comment')} />}
+          on={<Text text={t('There is no comment')} />}
+        />
       )}
     </VStack>
   );
