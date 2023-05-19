@@ -6,8 +6,10 @@ import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 import cls from './NotificationList.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Skeleton as SkeletonDeprecation } from '@/shared/ui/deprecated/Skeleton';
 import { Text } from '@/shared/ui/deprecated/Text';
+import { Skeleton as SkeletonRedesign } from '@/shared/ui/redesigned/Skeleton';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface NotificationListProps {
@@ -38,6 +40,12 @@ export const NotificationList = memo((props: NotificationListProps) => {
   //     refetchOnMountOrArgChange: true,
   //   },
   // );
+
+  const Skeleton = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => SkeletonDeprecation,
+    on: () => SkeletonRedesign,
+  });
 
   if (isLoading) {
     return (

@@ -36,7 +36,7 @@
       "description": "Произошло какое-то событие",
       "userId": "1",
       "profileId": "1",
-      "isRead": false
+      "isRead": true
     },
     {
       "id": "5",
@@ -728,7 +728,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
