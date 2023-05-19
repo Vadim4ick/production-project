@@ -18,10 +18,10 @@ import {
   Button as ButtonDeprecated,
   ThemeButton,
 } from '@/shared/ui/deprecated/Button';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popups';
 import { Text } from '@/shared/ui/redesigned/Text';

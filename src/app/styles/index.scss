@@ -4,8 +4,7 @@
 @import 'themes/dark';
 @import 'themes/orange';
 
-body,
-.app_drawer {
+body {
   font: var(--font-m);
   color: var(--primary-color);
 }

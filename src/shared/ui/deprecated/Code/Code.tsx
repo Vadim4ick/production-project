@@ -1,8 +1,8 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Modal } from '../../redesigned/Modal/Modal';
 import { Button, ThemeButton } from '../Button/Button';
-import { Modal } from '../Modal/Modal';
 import { Text } from '../Text/Text';
 
 import cls from './Code.module.scss';
