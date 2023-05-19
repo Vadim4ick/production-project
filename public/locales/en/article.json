@@ -24,5 +24,8 @@
   "we-recommend": "We recommend",
   "edit": "Edit",
   "editing-an-article-with-id": "Editing an article with ID = ",
-  "sozdanie-novoi-stati": "Creating a new article"
+  "sozdanie-novoi-stati": "Creating a new article",
+  "{{count}} просмотров_zero": "{{count}} views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views"
 }
