@@ -3,6 +3,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { addDecorator } from '@storybook/react';
 
+import { FeatureFlagsDecorator } from '../../src/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 // import React, { Suspense, useEffect } from 'react';
 // import { I18nextProvider } from 'react-i18next';
 // import i18n from '../../src/shared/config/i18n/i18nForStorybook';
@@ -70,3 +71,4 @@ addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);
+addDecorator(FeatureFlagsDecorator({}));
