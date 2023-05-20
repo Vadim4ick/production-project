@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
@@ -18,6 +19,8 @@ const App = () => {
   const { theme } = useTheme();
 
   const inited = useSelector(getUserInited);
+
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     if (!inited) {
@@ -60,7 +63,7 @@ const App = () => {
               content={<AppRouter />}
               header={<Navbar />}
               sidebar={<Sidebar />}
-              toolbar={<div>123</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
