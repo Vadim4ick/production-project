@@ -17,6 +17,7 @@ interface ArticleListProps {
   isLoading?: boolean;
   target?: HTMLAttributeAnchorTarget;
   view?: ArticleView;
+  virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -33,6 +34,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     view = ArticleView.SMALL,
     isLoading,
     target,
+    virtualized = true,
   } = props;
   const { t } = useTranslation();
 
@@ -66,7 +68,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
       }
       on={
         <div
-          className={classNames(cls.ArticleListRedesigned, {}, [cls[view]])}
+          className={classNames(
+            virtualized
+              ? cls.ArticleListRedesigned
+              : cls.ArticleListRedesignedNoVirtualezated,
+            {},
+            [cls[view]],
+          )}
           data-testid="ArticleList"
         >
           {articles.map((item) => (

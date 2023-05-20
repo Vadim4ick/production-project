@@ -12,10 +12,10 @@
   border: none;
   background: none;
   outline: none;
-  color: var(--primary-color);
+  color: var(--text-redesigned);
   cursor: pointer;
 }
 
 .active {
-  color: var(--text-redesigned);
+  background: var(--light-bg-redesigned);
 }

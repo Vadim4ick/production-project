@@ -29,3 +29,10 @@
     row-gap: 15px;
   }
 }
+
+.ArticleListRedesignedNoVirtualezated {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  row-gap: 16px;
+}

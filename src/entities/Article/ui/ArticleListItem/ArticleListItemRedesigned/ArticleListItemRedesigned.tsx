@@ -50,7 +50,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
     return (
       <Card
-        padding="0"
+        padding="24"
         max
         data-testid="ArticleListItem"
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}

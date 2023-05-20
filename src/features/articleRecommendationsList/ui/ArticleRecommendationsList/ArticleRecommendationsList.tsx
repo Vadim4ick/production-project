@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
+import cls from './ArticleRecommendationsList.module.scss';
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -38,17 +39,36 @@ export const ArticleRecommendationsList = memo(
           on={<Text size={'l'} title={t('we-recommend')} />}
         />
 
-        <HStack
-          data-testid="ArticleRecommendationsList"
-          gap={'32'}
-          className={classNames('', {}, [className])}
-        >
-          <ArticleList
-            // virtualized={false}
-            target="_blank"
-            articles={articles}
-          />
-        </HStack>
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          off={
+            <HStack
+              data-testid="ArticleRecommendationsList"
+              gap={'32'}
+              className={classNames('', {}, [className])}
+            >
+              <ArticleList
+                virtualized={false}
+                target="_blank"
+                articles={articles}
+              />
+            </HStack>
+          }
+          on={
+            <div
+              data-testid="ArticleRecommendationsList"
+              className={classNames(cls.ArticleRecommndationsListRedesign, {}, [
+                className,
+              ])}
+            >
+              <ArticleList
+                virtualized={false}
+                target="_blank"
+                articles={articles}
+              />
+            </div>
+          }
+        />
       </>
     );
   },
