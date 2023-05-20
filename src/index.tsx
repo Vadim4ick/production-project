@@ -1,13 +1,13 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+import App from './app/App';
+import { ForceUpdateProvider } from './shared/lib/render/forceUpdate';
 import { ErrorBounderay } from '@/app/providers/ErrorBounderay';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 import '@/shared/config/i18n/i18n';
-
-import App from './app/App';
 
 const container = document.getElementById('root');
 
@@ -23,9 +23,11 @@ root.render(
   <BrowserRouter>
     <StoreProvider>
       <ErrorBounderay>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <ForceUpdateProvider>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </ForceUpdateProvider>
       </ErrorBounderay>
     </StoreProvider>
   </BrowserRouter>,

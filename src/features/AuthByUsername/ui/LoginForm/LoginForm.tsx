@@ -18,6 +18,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import {
   Button as ButtonRedesign,
   ThemeButton,
@@ -48,6 +49,8 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
 
+  const forceUpdate = useForceUpdate();
+
   const [pass, isPass] = useState(false);
 
   const onChangeUsername = useCallback(
@@ -69,8 +72,9 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
 
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
+      forceUpdate();
     }
-  }, [onSuccess, dispatch, password, username]);
+  }, [dispatch, username, password, onSuccess, forceUpdate]);
 
   const onPass = useCallback(() => {
     isPass((prev) => !prev);
