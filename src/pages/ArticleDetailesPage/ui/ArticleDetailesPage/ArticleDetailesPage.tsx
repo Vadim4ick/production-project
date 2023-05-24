@@ -1,4 +1,5 @@
-import { FC, memo } from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import { FC, memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
@@ -40,6 +41,15 @@ const ArticleDetailesPage: FC<ArticleDetailesPageProps> = (props) => {
   if (!id) {
     return null;
   }
+
+  toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => undefined,
+    on: () =>
+      useEffect(() => {
+        window.scroll({ top: 0 });
+      }, []),
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

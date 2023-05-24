@@ -23,7 +23,7 @@ interface PageProps extends TestProps {
   isLoading?: boolean;
 }
 
-export const PAGE_ID = 'PAGE_ID ';
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page = (props: PageProps) => {
   const { className, children, onScrollEnd, isLoading } = props;

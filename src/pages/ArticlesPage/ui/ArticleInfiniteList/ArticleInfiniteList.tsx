@@ -8,12 +8,13 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slice/articlesPageSlice';
+import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 
-// import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
-// import cls from './ArticleInfiniteList.module.scss';
+import cls from './ArticleInfiniteList.module.scss';
 import { ArticleList } from '@/entities/Article';
-// import { scrollRestorationActions } from '@/features/ScrollRestoration';
+import { scrollRestorationActions } from '@/features/ScrollRestoration';
 import { getScrollIndex } from '@/features/ScrollRestoration';
+import { ToggleFeatures } from '@/shared/lib/features';
 import {
   Text,
   TextAlign,
@@ -50,16 +51,31 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
   }
 
   return (
-    <ArticleList
-      className={className}
-      isLoading={isLoading}
-      // onLoadNextPart={onLoadNextPart}
-      // scrollIdx={scrollIdx}
-      view={view}
-      articles={articles}
-      // virtualized={true}
-      // ArticlesPageFilter={<ArticlesPageFilter className={cls.marginRight} />}
-      // setScrollIdx={scrollRestorationActions.setScrollIndex}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <ArticleList
+          className={className}
+          isLoading={isLoading}
+          view={view}
+          articles={articles}
+        />
+      }
+      off={
+        <ArticleList
+          className={className}
+          isLoading={isLoading}
+          onLoadNextPart={onLoadNextPart}
+          scrollIdx={scrollIdx}
+          view={view}
+          articles={articles}
+          virtualized={true}
+          ArticlesPageFilter={
+            <ArticlesPageFilter className={cls.marginRight} />
+          }
+          setScrollIdx={scrollRestorationActions.setScrollIndex}
+        />
+      }
     />
   );
 });

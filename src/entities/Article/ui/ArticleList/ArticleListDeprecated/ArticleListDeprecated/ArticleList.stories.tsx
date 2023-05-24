@@ -4,24 +4,24 @@ import {
   ArticleBlockType,
   ArticleType,
   ArticleView,
-} from '../../model/consts/articleConsts';
-import { Article } from '../../model/types/article';
+} from '../../../../model/consts/articleConsts';
+import { Article } from '../../../../model/types/article';
 
-import { ArticleList } from './ArticleList';
+import { ArticleListDeprecated } from './ArticleListDeprecated';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'entities/Article/ArticleList',
-  component: ArticleList,
+  component: ArticleListDeprecated,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
   parameters: { loki: { skip: true } },
   decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof ArticleList>;
+} as ComponentMeta<typeof ArticleListDeprecated>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => (
-  <ArticleList {...args} />
+const Template: ComponentStory<typeof ArticleListDeprecated> = (args) => (
+  <ArticleListDeprecated {...args} />
 );
 
 const article: Article = {
