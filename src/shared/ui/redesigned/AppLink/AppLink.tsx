@@ -17,7 +17,7 @@ interface AppLinkProps extends LinkProps {
 export const AppLink = forwardRef(
   (props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
     const {
-      className,
+      className = '',
       children,
       to,
       variant = 'primary',

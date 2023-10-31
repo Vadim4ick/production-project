@@ -88,15 +88,15 @@ export const ArticleListDeprecated = memo(
       return null;
     };
 
-    if (!isLoading && !articles.length) {
-      return (
-        <div
-          className={classNames(cls.articleList, {}, [className, cls[view]])}
-        >
-          <Text size={TextSize.L} title={t('articles-are-not-found')} />
-        </div>
-      );
-    }
+    // if (!isLoading && !articles.length) {
+    //   return (
+    //     <div
+    //       className={classNames(cls.articleList, {}, [className, cls[view]])}
+    //     >
+    //       <Text size={TextSize.L} title={t('articles-are-not-found')} />
+    //     </div>
+    //   );
+    // }
 
     const renderItem = (index: number, article: Article) => {
       return (
@@ -139,23 +139,30 @@ export const ArticleListDeprecated = memo(
                 cls[view],
               ])}
             >
-              <VirtuosoGrid
-                ref={virtuosoGridRef}
-                totalCount={articles.length}
-                components={{
-                  Header,
-                  Footer,
-                  ScrollSeekPlaceholder: ItemContainerComp,
-                }}
-                endReached={onLoadNextPart}
-                data={articles}
-                itemContent={renderItem}
-                listClassName={cls.itemsWrapper}
-                scrollSeekConfiguration={{
-                  enter: (velocity) => Math.abs(velocity) > 200,
-                  exit: (velocity) => Math.abs(velocity) < 30,
-                }}
-              />
+              {!isLoading && !articles.length ? (
+                <>
+                  <Header />
+                  <Text size={TextSize.L} title={t('articles-are-not-found')} />
+                </>
+              ) : (
+                <VirtuosoGrid
+                  ref={virtuosoGridRef}
+                  totalCount={articles.length}
+                  components={{
+                    Header,
+                    Footer,
+                    ScrollSeekPlaceholder: ItemContainerComp,
+                  }}
+                  endReached={onLoadNextPart}
+                  data={articles}
+                  itemContent={renderItem}
+                  listClassName={cls.itemsWrapper}
+                  scrollSeekConfiguration={{
+                    enter: (velocity) => Math.abs(velocity) > 200,
+                    exit: (velocity) => Math.abs(velocity) < 30,
+                  }}
+                />
+              )}
             </div>
           )
         ) : (

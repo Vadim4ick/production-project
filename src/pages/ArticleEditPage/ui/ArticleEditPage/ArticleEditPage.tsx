@@ -20,6 +20,10 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
 
   const userData = useSelector(getAuthUserData);
 
+  if (userData?.id !== id) {
+    return <div>Доступ запрещен</div>;
+  }
+
   return (
     <Page className={classNames('', {}, [className])}>
       {isEdit
