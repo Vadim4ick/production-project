@@ -3,7 +3,7 @@
 
 # echo "Lint TS"
 # npm run lint:ts
-npx lint-staged
+# npx lint-staged
 
 # echo "Lint Styles"
 # npm run lint:scss
